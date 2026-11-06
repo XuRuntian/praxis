@@ -4,6 +4,23 @@
 
 Agent 只需交付 `rule.py`，必要时附参数和模板。接口见 [docs/RULE_SPEC.md](docs/RULE_SPEC.md)。执行器按任务目录加载方法，不需修改核心代码；不固定范例数量，批量执行不要求目标有人工标注。
 
+## 从人工范例开始的完整流程
+
+前置探索的启动 Prompt 已保存在 [prompts/explore_segmentation.md](prompts/explore_segmentation.md)。在本仓库的 Agent 会话中发送：
+
+```text
+按 prompts/explore_segmentation.md 完成全流程。
+数据根目录：/path/to/data
+任务清单：/path/to/tasks.json
+新方法目录：task_rules/my_run
+新输出目录：outputs/my_run
+目标有 GT 且需要评分：否
+```
+
+清单为 `{"tasks":[{"task_id":"my_task","dataset":"任务原名","exemplar_ids":[0,1],"target_ids":[2,3]}]}`；此处两个范例只是示例，可指定其他数量。目标不要求有标注。Agent 会检查范例、探索并验证方法、保存必要代码/参数/模板，再调用 Praxis 执行。这个 Prompt 由 Agent 会话执行，`praxis run` 本身不会调用模型。
+
+全流程复现分为两层：保存原始启动指令、范例版本、探索脚本和验证依据，使研究过程可审查、关键参数与模板能重新生成；保存冻结方法和运行记录，使同样输入能重放切分结果。重新让 Agent 探索不保证逐字相同的代码或相同方法，模型与环境变化须记录。现有 344 条验收验证的是冻结方法执行复现，尚未验证这份新 Prompt 从头重新研究会得到相同结果。
+
 ## 安装
 
 ```bash
