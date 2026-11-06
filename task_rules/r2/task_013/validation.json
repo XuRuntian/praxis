@@ -1,0 +1,95 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        340,
+        662,
+        1180,
+        1607
+      ],
+      "reference_boundaries": [
+        341,
+        665,
+        1179,
+        1610
+      ],
+      "signed_errors_frames": [
+        -1,
+        -3,
+        1,
+        -3
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.06666666666666667,
+      "max_absolute_supported_boundary_error_frames": 3,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [],
+      "labels_nonnull": 5,
+      "labels_count": 5
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        405,
+        706,
+        1119,
+        1563
+      ],
+      "reference_boundaries": [
+        410,
+        707,
+        1120,
+        1565
+      ],
+      "signed_errors_frames": [
+        -5,
+        -1,
+        -1,
+        -2
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.075,
+      "max_absolute_supported_boundary_error_frames": 5,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [],
+      "labels_nonnull": 5,
+      "labels_count": 5
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        406,
+        706,
+        1120,
+        1563
+      ],
+      "notes": [],
+      "label_count": 5,
+      "nonnull_label_count": 5,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        340,
+        662,
+        1180,
+        1607
+      ],
+      "notes": [],
+      "label_count": 5,
+      "nonnull_label_count": 5,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": false
+}

@@ -1,0 +1,623 @@
+{
+  "source_commit": "b0f0776b9a3b7717a781dc3bacd2f22a8b44511e",
+  "files": [
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/research_core.py",
+      "source_sha256": "e2729484798b407cc5249f71666912f45d4808e6f451f088dcabc1b58e7c10b4",
+      "destination": "src/praxis/methods/r2/research_core.py",
+      "changes": "Remove experiment paths and unused research I/O; package-relative imports only. Numerical algorithms unchanged."
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/method_runtime.py",
+      "source_sha256": "59815e526b82e7c2ba8c871b363c25469d7749590c665038cd5510d996825a37",
+      "destination": "src/praxis/methods/r2/method_runtime.py",
+      "changes": "Remove experiment paths and unused research I/O; package-relative imports only. Numerical algorithms unchanged."
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/io_contract.py",
+      "source_sha256": "e1d492fefeaf347b110f01bec406acdfc3e0e2ca09f174c4b946ac05bf28c92e",
+      "destination": "src/praxis/methods/r2/io_contract.py",
+      "changes": "Remove experiment paths and unused research I/O; package-relative imports only. Numerical algorithms unchanged."
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_004/parameters.json",
+      "source_sha256": "eb904c56319b24c17f385d51dd6279bc5302afaffbf9ba7cbcf46b1b3ba7e708",
+      "destination": "task_rules/r2/task_004/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_004/templates.npz",
+      "source_sha256": "e8e3796fe6042c76818f5b4d1ca7bcc1b2fe8ab1e65f64089b538843f3c149f3",
+      "destination": "task_rules/r2/task_004/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_004/RULE.md",
+      "source_sha256": "853c1dec078769e9d6155cd91a63ca5c255f78d2e30085997a78df03e74d6d90",
+      "destination": "task_rules/r2/task_004/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_004/input_contract.json",
+      "source_sha256": "78fcb8f432ced8c9690174b601e14e87bd53f0ce126578a0309543395f7cf304",
+      "destination": "task_rules/r2/task_004/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_004/validation.json",
+      "source_sha256": "903d11946e3c90e2c101a35032d5e1e250a519aac3d61c239c1c5b23ba550aac",
+      "destination": "task_rules/r2/task_004/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_005/parameters.json",
+      "source_sha256": "b283a577d5ec7e69b309e0ade63e75db34f625d439737ee33de73bbfc6342442",
+      "destination": "task_rules/r2/task_005/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_005/templates.npz",
+      "source_sha256": "58e3fd1c39cf1073a3d78ed053129d4e432640e910912272e828066c372f9dc2",
+      "destination": "task_rules/r2/task_005/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_005/RULE.md",
+      "source_sha256": "2531c8685707a49c91194fa6c2975c03dbc557773fb0381273e0f5afec5a4dd2",
+      "destination": "task_rules/r2/task_005/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_005/input_contract.json",
+      "source_sha256": "78fcb8f432ced8c9690174b601e14e87bd53f0ce126578a0309543395f7cf304",
+      "destination": "task_rules/r2/task_005/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_005/validation.json",
+      "source_sha256": "78aded6589177d10ef6be0e61afcfc0044782ebf9aa1058f92c128c1172aacae",
+      "destination": "task_rules/r2/task_005/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_006/parameters.json",
+      "source_sha256": "654d49cb7be02c1ce547b94d723b669291a2bab78b955aad375a1b8ce94d53d2",
+      "destination": "task_rules/r2/task_006/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_006/templates.npz",
+      "source_sha256": "917fd98e63675b53fb5ac3d1fe64010156395988728dc1ed0e0bc2d8e4105b78",
+      "destination": "task_rules/r2/task_006/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_006/RULE.md",
+      "source_sha256": "75ccc75503ff90076c90e60499390fce77a34a237cfb32d4f266ba5349ef5d29",
+      "destination": "task_rules/r2/task_006/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_006/input_contract.json",
+      "source_sha256": "78fcb8f432ced8c9690174b601e14e87bd53f0ce126578a0309543395f7cf304",
+      "destination": "task_rules/r2/task_006/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_006/validation.json",
+      "source_sha256": "d4793a6504f346d578446facfcbfb4bc242df68d53e11236a3d2463919c1e2bb",
+      "destination": "task_rules/r2/task_006/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_007/parameters.json",
+      "source_sha256": "68023407bb3f839ec72876ed58a1352bf65fe2ad2684166ea0c3f09f5979a10d",
+      "destination": "task_rules/r2/task_007/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_007/templates.npz",
+      "source_sha256": "36ffc8c2740ded22ae7a519b5446ae31aa0e2dbc2c6562ebf7620ffda2fbd9b3",
+      "destination": "task_rules/r2/task_007/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_007/RULE.md",
+      "source_sha256": "2f1751e3da22a583e7bd4e5eff6ca8a92270a6a2f13fa3cc31fe85e3482eaf2f",
+      "destination": "task_rules/r2/task_007/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_007/input_contract.json",
+      "source_sha256": "18ae04a847e1ea502b246d285b93e32ae20b9a3eca418c9bc5b0c56a7f2d05f4",
+      "destination": "task_rules/r2/task_007/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_007/validation.json",
+      "source_sha256": "b7fdf8d24d52a9d36b016fcd4f659473b54fed24c9294c5829128d038651f5a8",
+      "destination": "task_rules/r2/task_007/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_008/parameters.json",
+      "source_sha256": "a1269f5ca49bc847604cbe6e15a22833693e30131b3eee303949e28457fc5c79",
+      "destination": "task_rules/r2/task_008/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_008/templates.npz",
+      "source_sha256": "2eef7bd38ebb57a913044d9106ffeb888fa1e443417820873fe212222270974a",
+      "destination": "task_rules/r2/task_008/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_008/RULE.md",
+      "source_sha256": "ab59be9ca874b43fe760875a4c74496a6a83a3ac90bd3739c8b675f502e22487",
+      "destination": "task_rules/r2/task_008/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_008/input_contract.json",
+      "source_sha256": "54e7b7143f6a0c556322d8c54cea89c2886ada9658063787f7ffba47ed417fc0",
+      "destination": "task_rules/r2/task_008/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_008/validation.json",
+      "source_sha256": "f7972c1aee938b82987cd61e0fef16f16ed07def0f21b0e594382c0269ebf0db",
+      "destination": "task_rules/r2/task_008/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_009/parameters.json",
+      "source_sha256": "5c32c2e0f9012e044c8d22dc7863ec206442e30f364cde57e83eca5e06bd1246",
+      "destination": "task_rules/r2/task_009/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_009/templates.npz",
+      "source_sha256": "5bc15f2a6ad18370fcdd212d6c2c4628a52cc3ad20aa19d43f037feb7e6c7909",
+      "destination": "task_rules/r2/task_009/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_009/RULE.md",
+      "source_sha256": "533cdfdb06436fc3acacbbd827e1b771a02234e8bc774555b3761ebd81af62d9",
+      "destination": "task_rules/r2/task_009/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_009/input_contract.json",
+      "source_sha256": "54e7b7143f6a0c556322d8c54cea89c2886ada9658063787f7ffba47ed417fc0",
+      "destination": "task_rules/r2/task_009/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_009/validation.json",
+      "source_sha256": "01bc18fd18b820d7bc88392fdade637fed7ee676a74c31249542bf1383cea802",
+      "destination": "task_rules/r2/task_009/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_010/parameters.json",
+      "source_sha256": "f3b1154d42ff878cf807e2a65176790829fdad0966232be3180c4127bc419344",
+      "destination": "task_rules/r2/task_010/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_010/templates.npz",
+      "source_sha256": "096bd9a321014cc4152adfe95e6ad7c7fc24cb38a0d6541697baef9f76b9b9c5",
+      "destination": "task_rules/r2/task_010/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_010/RULE.md",
+      "source_sha256": "a8659dce78ac99389976736e9545e8a0d8a5219e32ee583549672039c9c8017a",
+      "destination": "task_rules/r2/task_010/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_010/input_contract.json",
+      "source_sha256": "54e7b7143f6a0c556322d8c54cea89c2886ada9658063787f7ffba47ed417fc0",
+      "destination": "task_rules/r2/task_010/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_010/validation.json",
+      "source_sha256": "0cd72bbcf0a99a62f680ffe29ad03f6c38e014e2cce7c1b451098f6770bba31e",
+      "destination": "task_rules/r2/task_010/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_011/parameters.json",
+      "source_sha256": "47624d5a923645d541342e16976b09119615953e312f7d3686a1e5bb12b801b4",
+      "destination": "task_rules/r2/task_011/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_011/templates.npz",
+      "source_sha256": "e3d91c1f192d132f15ab41f82095cb7ae2450ae9b63826aae7302bd51d7bd32d",
+      "destination": "task_rules/r2/task_011/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_011/RULE.md",
+      "source_sha256": "0d291469a8b2301c1f1d9602dd9bda516399e41abf9579e219fcf7db7990cf82",
+      "destination": "task_rules/r2/task_011/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_011/input_contract.json",
+      "source_sha256": "54e7b7143f6a0c556322d8c54cea89c2886ada9658063787f7ffba47ed417fc0",
+      "destination": "task_rules/r2/task_011/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_011/validation.json",
+      "source_sha256": "90877216a3d67e79c99adaf7e0919e2aa512efd881c9596ab3e2cd17d49f3d66",
+      "destination": "task_rules/r2/task_011/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_012/parameters.json",
+      "source_sha256": "f9ef41e4fede63448660a730bf640afe619116993894a19abaf7f963275abc44",
+      "destination": "task_rules/r2/task_012/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_012/templates.npz",
+      "source_sha256": "cd87b1fc5e8073e763f66150ad9dd0514d5ce6f852cf195d6b4723c61b5035db",
+      "destination": "task_rules/r2/task_012/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_012/RULE.md",
+      "source_sha256": "162ed2f2e696378aa222a76db5e23844db9ad73877d15c0f138f6972cc067276",
+      "destination": "task_rules/r2/task_012/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_012/input_contract.json",
+      "source_sha256": "54e7b7143f6a0c556322d8c54cea89c2886ada9658063787f7ffba47ed417fc0",
+      "destination": "task_rules/r2/task_012/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_012/validation.json",
+      "source_sha256": "2b0b1ca21c7ae88ac386e4227cff79128fafb0428e36cadd0f7814fd45d8c91b",
+      "destination": "task_rules/r2/task_012/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_013/parameters.json",
+      "source_sha256": "477ee9e435c158716df6c0dbe2970d06083f828899898bdbc87fc170556677c3",
+      "destination": "task_rules/r2/task_013/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_013/templates.npz",
+      "source_sha256": "e91cdcdb92b8ba79fb54176eb6a132fead80b53e3a388f35332700bab477d8c2",
+      "destination": "task_rules/r2/task_013/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_013/RULE.md",
+      "source_sha256": "3be6182fed8a8073195e777400a49974274258de99f589ee577c4e3af0db8d8c",
+      "destination": "task_rules/r2/task_013/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_013/input_contract.json",
+      "source_sha256": "54e7b7143f6a0c556322d8c54cea89c2886ada9658063787f7ffba47ed417fc0",
+      "destination": "task_rules/r2/task_013/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_013/validation.json",
+      "source_sha256": "36edcbaa1dafa65be734e0b28724d83ebe523777a2c99dd5f4658c8e81b077e9",
+      "destination": "task_rules/r2/task_013/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_014/parameters.json",
+      "source_sha256": "f68b3e60f0e37bee5dc3c34abc7c6b0b019a2759718a2d9c769f808eda59e096",
+      "destination": "task_rules/r2/task_014/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_014/templates.npz",
+      "source_sha256": "93a87edaf440d1866888f9aeac70d8b1f9eb14e149ae09cd790f5a5e19278994",
+      "destination": "task_rules/r2/task_014/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_014/RULE.md",
+      "source_sha256": "1dee23bf88201e427857f7b4a92a491b7b5501fdde3390996bf78906f170d62d",
+      "destination": "task_rules/r2/task_014/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_014/input_contract.json",
+      "source_sha256": "4f16423cd5d2dc6452bd213d182c6c38a50e5c94c2059b698ae258b8c44e1132",
+      "destination": "task_rules/r2/task_014/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_014/validation.json",
+      "source_sha256": "58568e6d71fbb6095c75f290e32cb0ba13552aa4c996ef2eca653f0f33b3497a",
+      "destination": "task_rules/r2/task_014/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_016/parameters.json",
+      "source_sha256": "6c49ca54bf095c6def08c053a6da5f0ce19e03d6a417204a7e1fcc5cf59b5267",
+      "destination": "task_rules/r2/task_016/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_016/templates.npz",
+      "source_sha256": "2a85b44bdc8ccf99b606a490eb84d3715573dbe38ceb7b03e9603f7775602c6d",
+      "destination": "task_rules/r2/task_016/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_016/RULE.md",
+      "source_sha256": "d3f53f1b998ad83d11149fe8d4e07e289e3de13640cad77a6a1be935aa8ce236",
+      "destination": "task_rules/r2/task_016/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_016/input_contract.json",
+      "source_sha256": "a151561ecac00084f1714cc370ee3dd71ffd3c389ae1ba6e96c6baab82a45750",
+      "destination": "task_rules/r2/task_016/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_016/validation.json",
+      "source_sha256": "8aeb8ee81d08b6133ff59fb989c433fb71889b6c3ebcd556d1bcb057f0e7eeff",
+      "destination": "task_rules/r2/task_016/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_017/parameters.json",
+      "source_sha256": "e8dcfbbb753dda86ca10bc4fcaf82966c8abf917766bf45d4cb05d950b7f2361",
+      "destination": "task_rules/r2/task_017/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_017/templates.npz",
+      "source_sha256": "5fe5fd25eaab309a2769a17e627d5146bd9336deacac5ae96e968b77ed86f833",
+      "destination": "task_rules/r2/task_017/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_017/RULE.md",
+      "source_sha256": "abcff17385bbbc0d98e86a122af45078a9bbc0c51d5242e6f776a9ace7b632ce",
+      "destination": "task_rules/r2/task_017/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_017/input_contract.json",
+      "source_sha256": "a151561ecac00084f1714cc370ee3dd71ffd3c389ae1ba6e96c6baab82a45750",
+      "destination": "task_rules/r2/task_017/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_017/validation.json",
+      "source_sha256": "dc2ee01db5a47b7d60b47c627c87f5f498c4f75b5bdb20c1838c3f58fe51787c",
+      "destination": "task_rules/r2/task_017/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_018/parameters.json",
+      "source_sha256": "258896124efb652d45992065b581a218572c4290a54182228e88a73a543cbf08",
+      "destination": "task_rules/r2/task_018/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_018/templates.npz",
+      "source_sha256": "b15386617de361bd270bfcff2db24d93cca01f2d6314e098cdafb8799ae03c0e",
+      "destination": "task_rules/r2/task_018/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_018/RULE.md",
+      "source_sha256": "be5a169e09057ab6237aca41ebf4f592db5efdc59850a893464616b763a904aa",
+      "destination": "task_rules/r2/task_018/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_018/input_contract.json",
+      "source_sha256": "e481346f1b0ae95b915e5b4da3d03e9b45d69eb2238c54781d72ca1778f40b7b",
+      "destination": "task_rules/r2/task_018/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_018/validation.json",
+      "source_sha256": "e9118e866b0273d97f4beeaf5102f5851390741662367b1fd33495f7dbdef436",
+      "destination": "task_rules/r2/task_018/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_019/parameters.json",
+      "source_sha256": "598b342ff868705c7ff096fab999f3af2b04602caa54d397c3add2ec0f13f8cd",
+      "destination": "task_rules/r2/task_019/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_019/templates.npz",
+      "source_sha256": "1974bbf240d668709018bedc516f67e82993f5c1291ae07ae79cce6e2bea8073",
+      "destination": "task_rules/r2/task_019/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_019/RULE.md",
+      "source_sha256": "041559ba2b77b96c87731e672fd9ceb66217ceae4d6ecf36a8d24f11b61da083",
+      "destination": "task_rules/r2/task_019/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_019/input_contract.json",
+      "source_sha256": "a151561ecac00084f1714cc370ee3dd71ffd3c389ae1ba6e96c6baab82a45750",
+      "destination": "task_rules/r2/task_019/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_019/validation.json",
+      "source_sha256": "54cd3de2900f265839e16ab305a4dd7c91f12cbb5eef18e64a3062f60ad159a0",
+      "destination": "task_rules/r2/task_019/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_021/parameters.json",
+      "source_sha256": "f6d29e0573e78ab2d56675d17fe0e90976d04dfbf4009cf4046767c8fbb98506",
+      "destination": "task_rules/r2/task_021/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_021/templates.npz",
+      "source_sha256": "93319f8aa4911a74337fe0bf58b8240beb9332efb822bf89d9c19d708fa608f7",
+      "destination": "task_rules/r2/task_021/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_021/RULE.md",
+      "source_sha256": "c935798ea4a1a06f36f2acb45d206d079dc7365bc310bf09fe584c7d698a33cd",
+      "destination": "task_rules/r2/task_021/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_021/input_contract.json",
+      "source_sha256": "e481346f1b0ae95b915e5b4da3d03e9b45d69eb2238c54781d72ca1778f40b7b",
+      "destination": "task_rules/r2/task_021/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_021/validation.json",
+      "source_sha256": "4a2f13d45241eddccc2489348d7e9bdd372d4f802814b42d4bb47dee5af48b74",
+      "destination": "task_rules/r2/task_021/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_023/parameters.json",
+      "source_sha256": "c75555770c02b54ce7a2ed2770a8f330af86c8542159ee87f6ea9633c4878667",
+      "destination": "task_rules/r2/task_023/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_023/templates.npz",
+      "source_sha256": "dd8237878ac33ef2b9066ed2e5f66c3e99c74334dd447b27a7cb1466e71a1fc1",
+      "destination": "task_rules/r2/task_023/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_023/RULE.md",
+      "source_sha256": "25240dc1c85e737f9e5833d13a115331adf857d4eea0e2ecc828e48ff223d752",
+      "destination": "task_rules/r2/task_023/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_023/input_contract.json",
+      "source_sha256": "dcd4c239a95cfe37f8c90b094b081e29fae92c6f39b0aeb9b405962bed7710e9",
+      "destination": "task_rules/r2/task_023/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_023/validation.json",
+      "source_sha256": "25d0a79e88c08ffd16f2664bf6c767b148d4e13468a1e5a6a68d5264ea90783e",
+      "destination": "task_rules/r2/task_023/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_024/parameters.json",
+      "source_sha256": "7172b3cd28bc31305a8d008c45f22dce8689194b1f9c20ca7b1a238611d18aca",
+      "destination": "task_rules/r2/task_024/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_024/templates.npz",
+      "source_sha256": "c87b0a635b2d845b6e58c7d0499660ce544bf55b817cdc9f39d911cec0d371c6",
+      "destination": "task_rules/r2/task_024/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_024/RULE.md",
+      "source_sha256": "bc37a2be7edaeb8a62339d6a13a68e75ccc341814a0d7809c59e51668ef10095",
+      "destination": "task_rules/r2/task_024/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_024/input_contract.json",
+      "source_sha256": "dcd4c239a95cfe37f8c90b094b081e29fae92c6f39b0aeb9b405962bed7710e9",
+      "destination": "task_rules/r2/task_024/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_024/validation.json",
+      "source_sha256": "f870a49e96757c3b473a8cc90070417fd11b1a67dd534e5801cedfcf164da481",
+      "destination": "task_rules/r2/task_024/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_027/parameters.json",
+      "source_sha256": "eae0b2787f0618bae0115cf53331da1aecc42f971d0eaa1bd4517387f72e7d80",
+      "destination": "task_rules/r2/task_027/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_027/templates.npz",
+      "source_sha256": "4a71c0e231a8fae541f9d2d78c8e73ac0105de4aad97634dbeb275e918ec72f0",
+      "destination": "task_rules/r2/task_027/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_027/RULE.md",
+      "source_sha256": "f5d46fe318065f26ced2982c4871bbce594a938ad6139f2a48528483696d0170",
+      "destination": "task_rules/r2/task_027/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_027/input_contract.json",
+      "source_sha256": "78fcb8f432ced8c9690174b601e14e87bd53f0ce126578a0309543395f7cf304",
+      "destination": "task_rules/r2/task_027/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_027/validation.json",
+      "source_sha256": "fb1fa7301b4f844cdd7de18368cbb38a9899a4993a1cb5539cda6dc1aad88a7c",
+      "destination": "task_rules/r2/task_027/validation.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_028/parameters.json",
+      "source_sha256": "ca4bb6a5669a01a484dabb6361daf9be20f1ae3a080dd9db3a21461be7a084e7",
+      "destination": "task_rules/r2/task_028/parameters.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_028/templates.npz",
+      "source_sha256": "c2447415d4982717268182da4912f74470b6d78ef706413ef305affa09c41106",
+      "destination": "task_rules/r2/task_028/templates.npz",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_028/RULE.md",
+      "source_sha256": "30c83c020ad60e65a9d4cc25ceb609038f3b1f60954ddc45a04b613a0e5c76c0",
+      "destination": "task_rules/r2/task_028/RULE.md",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_028/input_contract.json",
+      "source_sha256": "dcd4c239a95cfe37f8c90b094b081e29fae92c6f39b0aeb9b405962bed7710e9",
+      "destination": "task_rules/r2/task_028/input_contract.json",
+      "changes": "none"
+    },
+    {
+      "source": "/home/xuruntian/physical-rule-benchmark/experiments/task_research_r2/rules/task_028/validation.json",
+      "source_sha256": "5e59910bca8ce5fe820fb3966ab4eaf3cf78ffa7e4b06b2007bdb75ea8ed633f",
+      "destination": "task_rules/r2/task_028/validation.json",
+      "changes": "none"
+    }
+  ]
+}

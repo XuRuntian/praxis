@@ -1,0 +1,586 @@
+{
+  "method": "anchored_wipe",
+  "alignment": "arms_velocity_strong",
+  "why": "长序列含重复擦拭和两侧交替动作；全身体对齐受无关身体变化干扰，平均误差6.74秒。用右侧释放、左侧释放建立三个物理子过程，再分臂对齐；擦拭结束和末次动作结束改用运动变化对应。尝试相对姿态和纯速度，仍有拾取完成及右侧动作交接约1–2秒不确定性；这些边界不是已验证精确规则。",
+  "task_id": "task_021",
+  "dataset": "Galbot_G1_scrub_toilet_bowl",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "arm_joint|gripper"
+      ]
+    ],
+    "smooth_seconds": 0.12,
+    "stride": 2,
+    "warp_penalty": 0.02,
+    "derivative_weight": 0.3
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          31
+        ],
+        "names": [
+          "follower_right_arm_joint1.pos",
+          "follower_right_arm_joint2.pos",
+          "follower_right_arm_joint3.pos",
+          "follower_right_arm_joint4.pos",
+          "follower_right_arm_joint5.pos",
+          "follower_right_arm_joint6.pos",
+          "follower_right_arm_joint7.pos",
+          "follower_right_gripper.pos",
+          "follower_left_arm_joint1.pos",
+          "follower_left_arm_joint2.pos",
+          "follower_left_arm_joint3.pos",
+          "follower_left_arm_joint4.pos",
+          "follower_left_arm_joint5.pos",
+          "follower_left_arm_joint6.pos",
+          "follower_left_arm_joint7.pos",
+          "follower_left_gripper.pos",
+          "follower_leg_joint1.pos",
+          "follower_leg_joint2.pos",
+          "follower_leg_joint3.pos",
+          "follower_leg_joint4.pos",
+          "follower_leg_joint5.pos",
+          "follower_head_joint1.pos",
+          "follower_head_joint2.pos",
+          "follower_chassis_pos1.pos",
+          "follower_chassis_pos2.pos",
+          "follower_chassis_pos3.pos",
+          "follower_chassis_pos4.pos",
+          "follower_chassis_vel1.pos",
+          "follower_chassis_vel2.pos",
+          "follower_chassis_vel3.pos",
+          "follower_chassis_vel4.pos"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          31
+        ],
+        "names": [
+          "leader_right_arm_joint1.pos",
+          "leader_right_arm_joint2.pos",
+          "leader_right_arm_joint3.pos",
+          "leader_right_arm_joint4.pos",
+          "leader_right_arm_joint5.pos",
+          "leader_right_arm_joint6.pos",
+          "leader_right_arm_joint7.pos",
+          "leader_right_gripper.pos",
+          "leader_left_arm_joint1.pos",
+          "leader_left_arm_joint2.pos",
+          "leader_left_arm_joint3.pos",
+          "leader_left_arm_joint4.pos",
+          "leader_left_arm_joint5.pos",
+          "leader_left_arm_joint6.pos",
+          "leader_left_arm_joint7.pos",
+          "leader_left_gripper.pos",
+          "leader_leg_joint1.pos",
+          "leader_leg_joint2.pos",
+          "leader_leg_joint3.pos",
+          "leader_leg_joint4.pos",
+          "leader_leg_joint5.pos",
+          "leader_head_joint1.pos",
+          "leader_head_joint2.pos",
+          "leader_chassis_pos1.pos",
+          "leader_chassis_pos2.pos",
+          "leader_chassis_pos3.pos",
+          "leader_chassis_pos4.pos",
+          "leader_chassis_vel1.pos",
+          "leader_chassis_vel2.pos",
+          "leader_chassis_vel3.pos",
+          "leader_chassis_vel4.pos"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up toilet seat from toilet, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up toilet seat from toilet, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "toilet seat",
+          "source_anchor": "toilet",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector transfer toilet seat from front to later",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "transfer",
+        "text": "right_effector transfer toilet seat from front to later",
+        "slots": {
+          "manipulated_object": "toilet seat",
+          "source_anchor": "front",
+          "destination_anchor": "later"
+        }
+      }
+    },
+    null,
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector scrub/wipe toilet with toilet brush at toilet and affect toilet",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "wipe_scrub",
+        "text": "left_effector scrub/wipe toilet with toilet brush at toilet and affect toilet",
+        "slots": {
+          "interaction_target": "toilet",
+          "tool": "toilet brush",
+          "position_anchor": "toilet",
+          "changed_object": "toilet",
+          "state_change": "clean"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector place toilet brush on floor and release it",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "place",
+        "text": "left_effector place toilet brush on floor and release it",
+        "slots": {
+          "manipulated_object": "toilet brush",
+          "placement_relation": "on",
+          "destination_anchor": "floor"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pull toilet seat at toilet from later to/toward front and affect toilet seat",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pull",
+        "text": "right_effector pull toilet seat at toilet from later to/toward front and affect toilet seat",
+        "slots": {
+          "interaction_target": "toilet seat",
+          "pull_anchor": "toilet",
+          "source_anchor": "later",
+          "destination_anchor": "front",
+          "changed_object": "toilet seat",
+          "state_change": "close"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector press switch of flushing at toilet and affect toilet",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "press",
+        "text": "left_effector press switch of flushing at toilet and affect toilet",
+        "slots": {
+          "press_anchor": "switch",
+          "interaction_target": "flushing",
+          "position_anchor": "toilet",
+          "changed_object": "toilet",
+          "state_change": "flushing"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector performs no task-relevant manipulation",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "none",
+        "text": "left_effector performs no task-relevant manipulation",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [
+    2
+  ],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 5143,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 315,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up toilet seat from toilet, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up toilet seat from toilet, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "toilet seat",
+              "source_anchor": "toilet",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 315,
+          "end_frame": 573,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector transfer toilet seat from front to later",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "transfer",
+            "text": "right_effector transfer toilet seat from front to later",
+            "slots": {
+              "manipulated_object": "toilet seat",
+              "source_anchor": "front",
+              "destination_anchor": "later"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 573,
+          "end_frame": 1803,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up toiler brush from floor, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up toiler brush from floor, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "toiler brush",
+              "source_anchor": "floor",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 1803,
+          "end_frame": 2738,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector scrub/wipe toilet with toilet brush at toilet and affect toilet",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "wipe_scrub",
+            "text": "left_effector scrub/wipe toilet with toilet brush at toilet and affect toilet",
+            "slots": {
+              "interaction_target": "toilet",
+              "tool": "toilet brush",
+              "position_anchor": "toilet",
+              "changed_object": "toilet",
+              "state_change": "clean"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 2738,
+          "end_frame": 3039,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector place toilet brush on floor and release it",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "place",
+            "text": "left_effector place toilet brush on floor and release it",
+            "slots": {
+              "manipulated_object": "toilet brush",
+              "placement_relation": "on",
+              "destination_anchor": "floor"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 3039,
+          "end_frame": 4140,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pull toilet seat at toilet from later to/toward front and affect toilet seat",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pull",
+            "text": "right_effector pull toilet seat at toilet from later to/toward front and affect toilet seat",
+            "slots": {
+              "interaction_target": "toilet seat",
+              "pull_anchor": "toilet",
+              "source_anchor": "later",
+              "destination_anchor": "front",
+              "changed_object": "toilet seat",
+              "state_change": "close"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 4140,
+          "end_frame": 4799,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector press switch of flushing at toilet and affect toilet",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "press",
+            "text": "left_effector press switch of flushing at toilet and affect toilet",
+            "slots": {
+              "press_anchor": "switch",
+              "interaction_target": "flushing",
+              "position_anchor": "toilet",
+              "changed_object": "toilet",
+              "state_change": "flushing"
+            }
+          }
+        },
+        {
+          "id": 7,
+          "start_frame": 4799,
+          "end_frame": 5143,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector performs no task-relevant manipulation",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "none",
+            "text": "left_effector performs no task-relevant manipulation",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 4454,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 310,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up toilet seat from toilet, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up toilet seat from toilet, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "toilet seat",
+              "source_anchor": "toilet",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 310,
+          "end_frame": 525,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector transfer toilet seat from front to later",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "transfer",
+            "text": "right_effector transfer toilet seat from front to later",
+            "slots": {
+              "manipulated_object": "toilet seat",
+              "source_anchor": "front",
+              "destination_anchor": "later"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 525,
+          "end_frame": 1269,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up toilet brush from floor, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up toilet brush from floor, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "toilet brush",
+              "source_anchor": "floor",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 1269,
+          "end_frame": 2354,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector scrub/wipe toilet with toilet brush at toilet and affect toilet",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "wipe_scrub",
+            "text": "left_effector scrub/wipe toilet with toilet brush at toilet and affect toilet",
+            "slots": {
+              "interaction_target": "toilet",
+              "tool": "toilet brush",
+              "position_anchor": "toilet",
+              "changed_object": "toilet",
+              "state_change": "clean"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 2354,
+          "end_frame": 2595,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector place toilet brush on floor and release it",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "place",
+            "text": "left_effector place toilet brush on floor and release it",
+            "slots": {
+              "manipulated_object": "toilet brush",
+              "placement_relation": "on",
+              "destination_anchor": "floor"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 2595,
+          "end_frame": 3266,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pull toilet seat at toilet from later to/toward front and affect toilet seat",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pull",
+            "text": "right_effector pull toilet seat at toilet from later to/toward front and affect toilet seat",
+            "slots": {
+              "interaction_target": "toilet seat",
+              "pull_anchor": "toilet",
+              "source_anchor": "later",
+              "destination_anchor": "front",
+              "changed_object": "toilet seat",
+              "state_change": "close"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 3266,
+          "end_frame": 4194,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector press switch of flushing at toilet and affect toilet",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "press",
+            "text": "left_effector press switch of flushing at toilet and affect toilet",
+            "slots": {
+              "press_anchor": "switch",
+              "interaction_target": "flushing",
+              "position_anchor": "toilet",
+              "changed_object": "toilet",
+              "state_change": "flushing"
+            }
+          }
+        },
+        {
+          "id": 7,
+          "start_frame": 4194,
+          "end_frame": 4454,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector performs no task-relevant manipulation",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "none",
+            "text": "left_effector performs no task-relevant manipulation",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "boundary_index": 1,
+      "index": 7,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 58.30851754996638,
+      "hold": 3,
+      "exemplar_values": [
+        32.58103413096446,
+        84.0360009689683
+      ]
+    },
+    {
+      "boundary_index": 4,
+      "index": 15,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 67.50648057490415,
+      "hold": 3,
+      "exemplar_values": [
+        59.623273690605444,
+        75.38968745920286
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": true
+}

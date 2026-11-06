@@ -1,0 +1,471 @@
+{
+  "method": "grip_fsm",
+  "fraction": 0.95,
+  "alignment": "arms_grips",
+  "why": "先右闭合，再右释放，最后左释放。第二范例左夹爪有中途短暂张开并再次闭合，因此最后阶段使用最后一个满足阈值的释放事件，不能取第一次。双向误差不超过5帧。",
+  "task_id": "task_017",
+  "dataset": "Galbot_G1_Insert_Test tube_Insert the test tube_1022_right",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "arm_joint|gripper"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          23
+        ],
+        "names": [
+          "right_arm_joint_1",
+          "right_arm_joint_2",
+          "right_arm_joint_3",
+          "right_arm_joint_4",
+          "right_arm_joint_5",
+          "right_arm_joint_6",
+          "right_arm_joint_7",
+          "left_arm_joint_1",
+          "left_arm_joint_2",
+          "left_arm_joint_3",
+          "left_arm_joint_4",
+          "left_arm_joint_5",
+          "left_arm_joint_6",
+          "left_arm_joint_7",
+          "right_gripper_joint_1",
+          "left_gripper_joint_1",
+          "leg_joint_1",
+          "leg_joint_2",
+          "leg_joint_3",
+          "leg_joint_4",
+          "leg_joint_5",
+          "head_joint_1",
+          "head_joint_2"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          23
+        ],
+        "names": [
+          "right_arm_joint_1",
+          "right_arm_joint_2",
+          "right_arm_joint_3",
+          "right_arm_joint_4",
+          "right_arm_joint_5",
+          "right_arm_joint_6",
+          "right_arm_joint_7",
+          "left_arm_joint_1",
+          "left_arm_joint_2",
+          "left_arm_joint_3",
+          "left_arm_joint_4",
+          "left_arm_joint_5",
+          "left_arm_joint_6",
+          "left_arm_joint_7",
+          "right_gripper_joint_1",
+          "left_gripper_joint_1",
+          "leg_joint_1",
+          "leg_joint_2",
+          "leg_joint_3",
+          "leg_joint_4",
+          "leg_joint_5",
+          "head_joint_1",
+          "head_joint_2"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up test tube from white table, grasp anchor bottom, grasp method pinch",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up test tube from white table, grasp anchor bottom, grasp method pinch",
+        "slots": {
+          "grasp_anchor": "bottom",
+          "grasp_method": "pinch",
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "test tube"
+          },
+          "source_anchor": {
+            "color": "white",
+            "material": "",
+            "name": "table"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "handover_or_regrasp",
+      "description": "right_effector hand over test tube to left_effector",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "hand_over",
+        "text": "right_effector hand over test tube to left_effector",
+        "slots": {
+          "destination_anchor": "left_effector",
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "test tube"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "primary_with_support",
+      "description": "left_effector insert test tube into orange test tube rack through top and affect orange test tube rack, while right_effector return to initial pose to assist/support the primary action",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "insert",
+        "text": "left_effector insert test tube into orange test tube rack through top and affect orange test tube rack",
+        "slots": {
+          "changed_object": {
+            "color": "orange",
+            "material": "",
+            "name": "test tube rack"
+          },
+          "destination_anchor": {
+            "color": "orange",
+            "material": "",
+            "name": "test tube rack"
+          },
+          "insert_anchor": "top",
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "test tube"
+          }
+        }
+      },
+      "auxiliary_action": {
+        "subject": "right_effector",
+        "skill": "return_to_initial_pose",
+        "text": "right_effector return to initial pose",
+        "slots": {}
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector return to initial pose",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "return_to_initial_pose",
+        "text": "left_effector return to initial pose",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 840,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 160,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up test tube from white table, grasp anchor bottom, grasp method pinch",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up test tube from white table, grasp anchor bottom, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "bottom",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "test tube"
+              },
+              "source_anchor": {
+                "color": "white",
+                "material": "",
+                "name": "table"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 160,
+          "end_frame": 375,
+          "state": "normal",
+          "coordination_mode": "handover_or_regrasp",
+          "description": "right_effector hand over test tube to left_effector",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "hand_over",
+            "text": "right_effector hand over test tube to left_effector",
+            "slots": {
+              "destination_anchor": "left_effector",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "test tube"
+              }
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 375,
+          "end_frame": 734,
+          "state": "normal",
+          "coordination_mode": "primary_with_support",
+          "description": "left_effector insert test tube into orange test tube rack through top and affect orange test tube rack, while right_effector return to initial pose to assist/support the primary action",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "insert",
+            "text": "left_effector insert test tube into orange test tube rack through top and affect orange test tube rack",
+            "slots": {
+              "changed_object": {
+                "color": "orange",
+                "material": "",
+                "name": "test tube rack"
+              },
+              "destination_anchor": {
+                "color": "orange",
+                "material": "",
+                "name": "test tube rack"
+              },
+              "insert_anchor": "top",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "test tube"
+              }
+            }
+          },
+          "auxiliary_action": {
+            "subject": "right_effector",
+            "skill": "return_to_initial_pose",
+            "text": "right_effector return to initial pose",
+            "slots": {}
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 734,
+          "end_frame": 840,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector return to initial pose",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "return_to_initial_pose",
+            "text": "left_effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 925,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 167,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up test tube from white table, grasp anchor bottom, grasp method pinch",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up test tube from white table, grasp anchor bottom, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "bottom",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "test tube"
+              },
+              "source_anchor": {
+                "color": "white",
+                "material": "",
+                "name": "table"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 167,
+          "end_frame": 369,
+          "state": "normal",
+          "coordination_mode": "handover_or_regrasp",
+          "description": "right_effector hand over test tube to left_effector",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "hand_over",
+            "text": "right_effector hand over test tube to left_effector",
+            "slots": {
+              "destination_anchor": "left_effector",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "test tube"
+              }
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 369,
+          "end_frame": 801,
+          "state": "normal",
+          "coordination_mode": "primary_with_support",
+          "description": "left_effector insert test tube into orange test tube rack through top and affect orange test tube rack, while right_effector return to initial pose to assist/support the primary action",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "insert",
+            "text": "left_effector insert test tube into orange test tube rack through top and affect orange test tube rack",
+            "slots": {
+              "changed_object": {
+                "color": "orange",
+                "material": "",
+                "name": "test tube rack"
+              },
+              "destination_anchor": {
+                "color": "orange",
+                "material": "",
+                "name": "test tube rack"
+              },
+              "insert_anchor": "top",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "test tube"
+              }
+            }
+          },
+          "auxiliary_action": {
+            "subject": "right_effector",
+            "skill": "return_to_initial_pose",
+            "text": "right_effector return to initial pose",
+            "slots": {}
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 801,
+          "end_frame": 925,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector return to initial pose",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "return_to_initial_pose",
+            "text": "left_effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "boundary_index": 0,
+      "index": 14,
+      "column": "observation.state",
+      "direction": -1,
+      "threshold": 0.16399999745190147,
+      "levels": [
+        0.11999999731779099,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 1,
+      "index": 14,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 0.9559999998658895,
+      "levels": [
+        0.11999999731779099,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 2,
+      "index": 15,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 0.9570000000298022,
+      "levels": [
+        0.14000000059604645,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "last"
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "handoff_gate": {
+    "recipient_index": 15,
+    "maximum_closed_value": 0.23500000238418578,
+    "exemplar_values": [
+      0.1850000023841858,
+      0.18000000715255737
+    ]
+  },
+  "unresolved": false
+}

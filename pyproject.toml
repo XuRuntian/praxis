@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "praxis-segmentation"
+version = "0.1.0"
+description = "Exemplar-driven physical subtask segmentation"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.13,<2", "numba>=0.60,<1", "pyarrow>=14"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+praxis = "praxis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

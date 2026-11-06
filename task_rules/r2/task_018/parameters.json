@@ -1,0 +1,492 @@
+{
+  "method": "dtw",
+  "alignment": "body_and_arms",
+  "why": "底盘运动与双臂操作交替，夹爪存在重复抓取，纯计数不足。全身体状态比仅控制或速度/相对起点对齐稳定；初始身体移动时长变化很大，不能用时间比例。保留最多38帧对应误差，最后主体描述冲突保留null。",
+  "task_id": "task_018",
+  "dataset": "Galbot_G1_Pull_the_curtains",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "all"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          31
+        ],
+        "names": [
+          "follower_right_arm_joint1.pos",
+          "follower_right_arm_joint2.pos",
+          "follower_right_arm_joint3.pos",
+          "follower_right_arm_joint4.pos",
+          "follower_right_arm_joint5.pos",
+          "follower_right_arm_joint6.pos",
+          "follower_right_arm_joint7.pos",
+          "follower_right_gripper.pos",
+          "follower_left_arm_joint1.pos",
+          "follower_left_arm_joint2.pos",
+          "follower_left_arm_joint3.pos",
+          "follower_left_arm_joint4.pos",
+          "follower_left_arm_joint5.pos",
+          "follower_left_arm_joint6.pos",
+          "follower_left_arm_joint7.pos",
+          "follower_left_gripper.pos",
+          "follower_leg_joint1.pos",
+          "follower_leg_joint2.pos",
+          "follower_leg_joint3.pos",
+          "follower_leg_joint4.pos",
+          "follower_leg_joint5.pos",
+          "follower_head_joint1.pos",
+          "follower_head_joint2.pos",
+          "follower_chassis_pos1.pos",
+          "follower_chassis_pos2.pos",
+          "follower_chassis_pos3.pos",
+          "follower_chassis_pos4.pos",
+          "follower_chassis_vel1.pos",
+          "follower_chassis_vel2.pos",
+          "follower_chassis_vel3.pos",
+          "follower_chassis_vel4.pos"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          31
+        ],
+        "names": [
+          "leader_right_arm_joint1.pos",
+          "leader_right_arm_joint2.pos",
+          "leader_right_arm_joint3.pos",
+          "leader_right_arm_joint4.pos",
+          "leader_right_arm_joint5.pos",
+          "leader_right_arm_joint6.pos",
+          "leader_right_arm_joint7.pos",
+          "leader_right_gripper.pos",
+          "leader_left_arm_joint1.pos",
+          "leader_left_arm_joint2.pos",
+          "leader_left_arm_joint3.pos",
+          "leader_left_arm_joint4.pos",
+          "leader_left_arm_joint5.pos",
+          "leader_left_arm_joint6.pos",
+          "leader_left_arm_joint7.pos",
+          "leader_left_gripper.pos",
+          "leader_leg_joint1.pos",
+          "leader_leg_joint2.pos",
+          "leader_leg_joint3.pos",
+          "leader_leg_joint4.pos",
+          "leader_leg_joint5.pos",
+          "leader_head_joint1.pos",
+          "leader_head_joint2.pos",
+          "leader_chassis_pos1.pos",
+          "leader_chassis_pos2.pos",
+          "leader_chassis_pos3.pos",
+          "leader_chassis_pos4.pos",
+          "leader_chassis_vel1.pos",
+          "leader_chassis_vel2.pos",
+          "leader_chassis_vel3.pos",
+          "leader_chassis_vel4.pos"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "robot_body move from later to front",
+      "primary_action": {
+        "subject": "robot_body",
+        "skill": "navigate",
+        "text": "robot_body move from later to front",
+        "slots": {
+          "source_anchor": "later",
+          "destination_anchor": "front"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up curtain from windosill, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up curtain from windosill, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "curtain",
+          "source_anchor": "windosill",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector transfer curtain from center to right",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "transfer",
+        "text": "right_effector transfer curtain from center to right",
+        "slots": {
+          "manipulated_object": "curtain",
+          "source_anchor": "center",
+          "destination_anchor": "right"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "robot_body move from right to center",
+      "primary_action": {
+        "subject": "robot_body",
+        "skill": "navigate",
+        "text": "robot_body move from right to center",
+        "slots": {
+          "source_anchor": "right",
+          "destination_anchor": "center"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "pick",
+        "text": "left_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "curtain",
+          "source_anchor": "windowsill",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector transfer curtain from center to left",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "transfer",
+        "text": "left_effector transfer curtain from center to left",
+        "slots": {
+          "manipulated_object": "curtain",
+          "source_anchor": "center",
+          "destination_anchor": "left"
+        }
+      }
+    },
+    null
+  ],
+  "semantic_conflict_stages": [
+    6
+  ],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 2723,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 662,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "robot_body move from later to front",
+          "primary_action": {
+            "subject": "robot_body",
+            "skill": "navigate",
+            "text": "robot_body move from later to front",
+            "slots": {
+              "source_anchor": "later",
+              "destination_anchor": "front"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 662,
+          "end_frame": 955,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up curtain from windosill, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up curtain from windosill, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "windosill",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 955,
+          "end_frame": 1548,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector transfer curtain from center to right",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "transfer",
+            "text": "right_effector transfer curtain from center to right",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "center",
+              "destination_anchor": "right"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 1548,
+          "end_frame": 1714,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "robot_body move from right to center",
+          "primary_action": {
+            "subject": "robot_body",
+            "skill": "navigate",
+            "text": "robot_body move from right to center",
+            "slots": {
+              "source_anchor": "right",
+              "destination_anchor": "center"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 1714,
+          "end_frame": 1841,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "windowsill",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 1841,
+          "end_frame": 2456,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector transfer curtain from center to left",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "transfer",
+            "text": "left_effector transfer curtain from center to left",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "center",
+              "destination_anchor": "left"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 2456,
+          "end_frame": 2723,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector move from left to center",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "navigate",
+            "text": "left_effector move from left to center",
+            "slots": {
+              "source_anchor": "left",
+              "destination_anchor": "center"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 1915,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 230,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "robot_body move from later to front",
+          "primary_action": {
+            "subject": "robot_body",
+            "skill": "navigate",
+            "text": "robot_body move from later to front",
+            "slots": {
+              "source_anchor": "later",
+              "destination_anchor": "front"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 230,
+          "end_frame": 312,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "windowsill",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 312,
+          "end_frame": 722,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector transfer curtain from center to right",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "transfer",
+            "text": "right_effector transfer curtain from center to right",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "center",
+              "destination_anchor": "right"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 722,
+          "end_frame": 887,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "robot_body move from right to center",
+          "primary_action": {
+            "subject": "robot_body",
+            "skill": "navigate",
+            "text": "robot_body move from right to center",
+            "slots": {
+              "source_anchor": "right",
+              "destination_anchor": "center"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 887,
+          "end_frame": 951,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up curtain from windowsill, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "windowsill",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 951,
+          "end_frame": 1668,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector transfer curtain from center to left",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "transfer",
+            "text": "left_effector transfer curtain from center to left",
+            "slots": {
+              "manipulated_object": "curtain",
+              "source_anchor": "center",
+              "destination_anchor": "left"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 1668,
+          "end_frame": 1915,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "robot_body move from left to center",
+          "primary_action": {
+            "subject": "robot_body",
+            "skill": "navigate",
+            "text": "robot_body move from left to center",
+            "slots": {
+              "source_anchor": "left",
+              "destination_anchor": "center"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": true
+}

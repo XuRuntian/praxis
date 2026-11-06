@@ -1,0 +1,90 @@
+{
+  "fps": 20,
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        201
+      ],
+      "names": [
+        "full_skeleton",
+        "wrist_pose",
+        "finger_joints",
+        "head_pose"
+      ]
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        201
+      ],
+      "names": [
+        "full_skeleton",
+        "wrist_pose",
+        "finger_joints",
+        "head_pose"
+      ]
+    },
+    "observation.state.full_skeleton": {
+      "dtype": "float32",
+      "shape": [
+        150
+      ],
+      "names": [
+        "left_full_skeleton",
+        "right_full_skeleton"
+      ]
+    },
+    "observation.state.wrist": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": [
+        "left_wrist_pose",
+        "right_wrist_pose"
+      ]
+    },
+    "observation.state.finger": {
+      "dtype": "float32",
+      "shape": [
+        30
+      ],
+      "names": [
+        "left_finger_joints",
+        "right_finger_joints"
+      ]
+    },
+    "observation.state.head": {
+      "dtype": "float32",
+      "shape": [
+        7
+      ],
+      "names": [
+        "head_pose"
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    }
+  },
+  "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+}

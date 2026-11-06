@@ -1,0 +1,362 @@
+{
+  "method": "grip_fsm",
+  "fraction": 0.95,
+  "alignment": "right_grip_pose",
+  "why": "右侧闭合—释放顺序，两范例边界接近末端平台；状态比命令更符合完成定义。轨迹也能解释，但不需要引入全轨迹依赖。",
+  "task_id": "task_006",
+  "dataset": "Agilex_Split_Aloha_Prepare_Fruit salad_Banana_977_right",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "right_(pose_[xyz]$|gripper)"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          26
+        ],
+        "names": [
+          "right_joint_1",
+          "right_joint_2",
+          "right_joint_3",
+          "right_joint_4",
+          "right_joint_5",
+          "right_joint_6",
+          "right_pose_x",
+          "right_pose_y",
+          "right_pose_z",
+          "right_pose_rx",
+          "right_pose_ry",
+          "right_pose_rz",
+          "right_gripper",
+          "left_joint_1",
+          "left_joint_2",
+          "left_joint_3",
+          "left_joint_4",
+          "left_joint_5",
+          "left_joint_6",
+          "left_pose_x",
+          "left_pose_y",
+          "left_pose_z",
+          "left_pose_rx",
+          "left_pose_ry",
+          "left_pose_rz",
+          "left_gripper"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          26
+        ],
+        "names": [
+          "right_joint_1",
+          "right_joint_2",
+          "right_joint_3",
+          "right_joint_4",
+          "right_joint_5",
+          "right_joint_6",
+          "right_pose_x",
+          "right_pose_y",
+          "right_pose_z",
+          "right_pose_rx",
+          "right_pose_ry",
+          "right_pose_rz",
+          "right_gripper",
+          "left_joint_1",
+          "left_joint_2",
+          "left_joint_3",
+          "left_joint_4",
+          "left_joint_5",
+          "left_joint_6",
+          "left_pose_x",
+          "left_pose_y",
+          "left_pose_z",
+          "left_pose_rx",
+          "left_pose_ry",
+          "left_pose_rz",
+          "left_gripper"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up yellow banana from white table, grasp anchor main_body, grasp method clamp",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up yellow banana from white table, grasp anchor main_body, grasp method clamp",
+        "slots": {
+          "grasp_anchor": "main_body",
+          "grasp_method": "clamp",
+          "manipulated_object": {
+            "color": "yellow",
+            "material": "",
+            "name": "banana"
+          },
+          "source_anchor": {
+            "color": "white",
+            "material": "",
+            "name": "table"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector place yellow banana on brown basket and release it",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "place",
+        "text": "right_effector place yellow banana on brown basket and release it",
+        "slots": {
+          "destination_anchor": {
+            "color": "brown",
+            "material": "",
+            "name": "basket"
+          },
+          "manipulated_object": {
+            "color": "yellow",
+            "material": "",
+            "name": "banana"
+          },
+          "placement_relation": "on"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector return to initial pose",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "return_to_initial_pose",
+        "text": "right_effector return to initial pose",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 400,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 117,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up yellow banana from white table, grasp anchor main_body, grasp method clamp",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up yellow banana from white table, grasp anchor main_body, grasp method clamp",
+            "slots": {
+              "grasp_anchor": "main_body",
+              "grasp_method": "clamp",
+              "manipulated_object": {
+                "color": "yellow",
+                "material": "",
+                "name": "banana"
+              },
+              "source_anchor": {
+                "color": "white",
+                "material": "",
+                "name": "table"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 117,
+          "end_frame": 213,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place yellow banana on brown basket and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place yellow banana on brown basket and release it",
+            "slots": {
+              "destination_anchor": {
+                "color": "brown",
+                "material": "",
+                "name": "basket"
+              },
+              "manipulated_object": {
+                "color": "yellow",
+                "material": "",
+                "name": "banana"
+              },
+              "placement_relation": "on"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 213,
+          "end_frame": 400,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector return to initial pose",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "return_to_initial_pose",
+            "text": "right_effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 391,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 123,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up yellow banana from white table, grasp anchor main_body, grasp method clamp",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up yellow banana from white table, grasp anchor main_body, grasp method clamp",
+            "slots": {
+              "grasp_anchor": "main_body",
+              "grasp_method": "clamp",
+              "manipulated_object": {
+                "color": "yellow",
+                "material": "",
+                "name": "banana"
+              },
+              "source_anchor": {
+                "color": "white",
+                "material": "",
+                "name": "table"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 123,
+          "end_frame": 234,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place yellow banana on brown basket and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place yellow banana on brown basket and release it",
+            "slots": {
+              "destination_anchor": {
+                "color": "brown",
+                "material": "",
+                "name": "basket"
+              },
+              "manipulated_object": {
+                "color": "yellow",
+                "material": "",
+                "name": "banana"
+              },
+              "placement_relation": "on"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 234,
+          "end_frame": 391,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector return to initial pose",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "return_to_initial_pose",
+            "text": "right_effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "boundary_index": 0,
+      "index": 12,
+      "column": "observation.state",
+      "direction": -1,
+      "threshold": 0.32645000964403154,
+      "levels": [
+        0.3070000112056732,
+        0.6959999799728394
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 1,
+      "index": 12,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 0.6765499815344811,
+      "levels": [
+        0.3070000112056732,
+        0.6959999799728394
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": false
+}

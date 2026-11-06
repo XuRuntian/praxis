@@ -1,0 +1,545 @@
+{
+  "method": "dtw",
+  "alignment": "wrist_finger_velocity",
+  "why": "切划、双手展开、取放造成腕轨迹与手指形状的组合变化。全骨架在展开处偏76帧；腕+手指及其变化率把最大误差降至12帧。早期压住与取刀的局部先后仍有短时歧义，采用对应迁移并标复核。",
+  "task_id": "task_028",
+  "dataset": "拆快递_Unpacking_the_express_delivery",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state.wrist",
+        "all"
+      ],
+      [
+        "observation.state.finger",
+        "all"
+      ]
+    ],
+    "smooth_seconds": 0.12,
+    "stride": 2,
+    "warp_penalty": 0.02,
+    "derivative_weight": 0.1
+  },
+  "channels": {
+    "fps": 20,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          201
+        ],
+        "names": [
+          "full_skeleton",
+          "wrist_pose",
+          "finger_joints",
+          "head_pose"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          201
+        ],
+        "names": [
+          "full_skeleton",
+          "wrist_pose",
+          "finger_joints",
+          "head_pose"
+        ]
+      },
+      "observation.state.full_skeleton": {
+        "dtype": "float32",
+        "shape": [
+          150
+        ],
+        "names": [
+          "left_full_skeleton",
+          "right_full_skeleton"
+        ]
+      },
+      "observation.state.wrist": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "left_wrist_pose",
+          "right_wrist_pose"
+        ]
+      },
+      "observation.state.finger": {
+        "dtype": "float32",
+        "shape": [
+          30
+        ],
+        "names": [
+          "left_finger_joints",
+          "right_finger_joints"
+        ]
+      },
+      "observation.state.head": {
+        "dtype": "float32",
+        "shape": [
+          7
+        ],
+        "names": [
+          "head_pose"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector press mainboby of box at desktop and affect box",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "press",
+        "text": "left_effector press mainboby of box at desktop and affect box",
+        "slots": {
+          "press_anchor": "mainboby",
+          "interaction_target": "box",
+          "position_anchor": "desktop",
+          "changed_object": "box",
+          "state_change": "stable"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up knife from desktop, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up knife from desktop, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "knife",
+          "source_anchor": "desktop",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "primary_with_support",
+      "description": "right_effector slide knife on box from left to right, while left_effector press mainboby of box at desktop and affect box to assist/support the primary action",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "slide",
+        "text": "right_effector slide knife on box from left to right",
+        "slots": {
+          "manipulated_object": "knife",
+          "support_surface": "box",
+          "source_anchor": "left",
+          "destination_anchor": "right"
+        }
+      },
+      "auxiliary_action": {
+        "subject": "left_effector",
+        "skill": "press",
+        "text": "left_effector press mainboby of box at desktop and affect box",
+        "slots": {
+          "press_anchor": "mainboby",
+          "interaction_target": "box",
+          "position_anchor": "desktop",
+          "changed_object": "box",
+          "state_change": "stable"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors fold top of box and affect box",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "fold",
+        "text": "both_effectors fold top of box and affect box",
+        "slots": {
+          "manipulated_object": "box",
+          "folded_part_anchor": "top",
+          "fold_line_anchor": "center",
+          "fold_target_anchor": "up",
+          "changed_object": "box",
+          "state_change": "open"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up cup from box, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up cup from box, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "cup",
+          "source_anchor": "box",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector place cup on desktop and release it",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "place",
+        "text": "right_effector place cup on desktop and release it",
+        "slots": {
+          "manipulated_object": "cup",
+          "placement_relation": "on",
+          "destination_anchor": "desktop"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector performs no task-relevant manipulation",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "none",
+        "text": "left_effector performs no task-relevant manipulation",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 316,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 16,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector press mainboby of box at desktop and affect box",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "press",
+            "text": "left_effector press mainboby of box at desktop and affect box",
+            "slots": {
+              "press_anchor": "mainboby",
+              "interaction_target": "box",
+              "position_anchor": "desktop",
+              "changed_object": "box",
+              "state_change": "stable"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 16,
+          "end_frame": 34,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up knife from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up knife from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "knife",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 34,
+          "end_frame": 98,
+          "state": "normal",
+          "coordination_mode": "primary_with_support",
+          "description": "right_effector slide knife on box from left to right, while left_effector press mainboby of box at desktop and affect box to assist/support the primary action",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "slide",
+            "text": "right_effector slide knife on box from left to right",
+            "slots": {
+              "manipulated_object": "knife",
+              "support_surface": "box",
+              "source_anchor": "left",
+              "destination_anchor": "right"
+            }
+          },
+          "auxiliary_action": {
+            "subject": "left_effector",
+            "skill": "press",
+            "text": "left_effector press mainboby of box at desktop and affect box",
+            "slots": {
+              "press_anchor": "mainboby",
+              "interaction_target": "box",
+              "position_anchor": "desktop",
+              "changed_object": "box",
+              "state_change": "stable"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 98,
+          "end_frame": 187,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors fold top of box and affect box",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "fold",
+            "text": "both_effectors fold top of box and affect box",
+            "slots": {
+              "manipulated_object": "box",
+              "folded_part_anchor": "top",
+              "fold_line_anchor": "center",
+              "fold_target_anchor": "up",
+              "changed_object": "box",
+              "state_change": "open"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 187,
+          "end_frame": 217,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up cup from box, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up cup from box, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "cup",
+              "source_anchor": "box",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 217,
+          "end_frame": 255,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place cup on desktop and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place cup on desktop and release it",
+            "slots": {
+              "manipulated_object": "cup",
+              "placement_relation": "on",
+              "destination_anchor": "desktop"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 255,
+          "end_frame": 316,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector performs no task-relevant manipulation",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "none",
+            "text": "left_effector performs no task-relevant manipulation",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 455,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 28,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector press mainboby of box at desktop and affect box",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "press",
+            "text": "left_effector press mainboby of box at desktop and affect box",
+            "slots": {
+              "press_anchor": "mainboby",
+              "interaction_target": "box",
+              "position_anchor": "desktop",
+              "changed_object": "box",
+              "state_change": "stable"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 28,
+          "end_frame": 45,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up knife from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up knife from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "knife",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 45,
+          "end_frame": 155,
+          "state": "normal",
+          "coordination_mode": "primary_with_support",
+          "description": "right_effector slide knife on box from left to right, while left_effector press mainboby of box at desktop and affect box to assist/support the primary action",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "slide",
+            "text": "right_effector slide knife on box from left to right",
+            "slots": {
+              "manipulated_object": "knife",
+              "support_surface": "box",
+              "source_anchor": "left",
+              "destination_anchor": "right"
+            }
+          },
+          "auxiliary_action": {
+            "subject": "left_effector",
+            "skill": "press",
+            "text": "left_effector press mainboby of box at desktop and affect box",
+            "slots": {
+              "press_anchor": "mainboby",
+              "interaction_target": "box",
+              "position_anchor": "desktop",
+              "changed_object": "box",
+              "state_change": "stable"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 155,
+          "end_frame": 232,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors fold top of box and affect box",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "fold",
+            "text": "both_effectors fold top of box and affect box",
+            "slots": {
+              "manipulated_object": "box",
+              "folded_part_anchor": "top",
+              "fold_line_anchor": "center",
+              "fold_target_anchor": "up",
+              "changed_object": "box",
+              "state_change": "open"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 232,
+          "end_frame": 255,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up cup from box, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up cup from box, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "cup",
+              "source_anchor": "box",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 255,
+          "end_frame": 281,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place cup on desktop and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place cup on desktop and release it",
+            "slots": {
+              "manipulated_object": "cup",
+              "placement_relation": "on",
+              "destination_anchor": "desktop"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 281,
+          "end_frame": 455,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector performs no task-relevant manipulation",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "none",
+            "text": "left_effector performs no task-relevant manipulation",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state.finger",
+    "observation.state.wrist"
+  ],
+  "unresolved": true
+}

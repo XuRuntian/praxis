@@ -1,0 +1,95 @@
+{
+  "fps": 30,
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        26
+      ],
+      "names": [
+        "right_joint_1",
+        "right_joint_2",
+        "right_joint_3",
+        "right_joint_4",
+        "right_joint_5",
+        "right_joint_6",
+        "right_pose_x",
+        "right_pose_y",
+        "right_pose_z",
+        "right_pose_rx",
+        "right_pose_ry",
+        "right_pose_rz",
+        "right_gripper",
+        "left_joint_1",
+        "left_joint_2",
+        "left_joint_3",
+        "left_joint_4",
+        "left_joint_5",
+        "left_joint_6",
+        "left_pose_x",
+        "left_pose_y",
+        "left_pose_z",
+        "left_pose_rx",
+        "left_pose_ry",
+        "left_pose_rz",
+        "left_gripper"
+      ]
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        26
+      ],
+      "names": [
+        "right_joint_1",
+        "right_joint_2",
+        "right_joint_3",
+        "right_joint_4",
+        "right_joint_5",
+        "right_joint_6",
+        "right_pose_x",
+        "right_pose_y",
+        "right_pose_z",
+        "right_pose_rx",
+        "right_pose_ry",
+        "right_pose_rz",
+        "right_gripper",
+        "left_joint_1",
+        "left_joint_2",
+        "left_joint_3",
+        "left_joint_4",
+        "left_joint_5",
+        "left_joint_6",
+        "left_pose_x",
+        "left_pose_y",
+        "left_pose_z",
+        "left_pose_rx",
+        "left_pose_ry",
+        "left_pose_rz",
+        "left_gripper"
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    }
+  },
+  "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+}

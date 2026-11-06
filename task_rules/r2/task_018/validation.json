@@ -1,0 +1,115 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        218,
+        347,
+        742,
+        894,
+        989,
+        1684
+      ],
+      "reference_boundaries": [
+        230,
+        312,
+        722,
+        887,
+        951,
+        1668
+      ],
+      "signed_errors_frames": [
+        -12,
+        35,
+        20,
+        7,
+        38,
+        16
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.711111111111111,
+      "max_absolute_supported_boundary_error_frames": 38,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.16576433258364073
+      ],
+      "labels_nonnull": 7,
+      "labels_count": 7
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        680,
+        922,
+        1536,
+        1705,
+        1805,
+        2450
+      ],
+      "reference_boundaries": [
+        662,
+        955,
+        1548,
+        1714,
+        1841,
+        2456
+      ],
+      "signed_errors_frames": [
+        18,
+        -33,
+        -12,
+        -9,
+        -36,
+        -6
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.6333333333333333,
+      "max_absolute_supported_boundary_error_frames": 36,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.13716544974673392
+      ],
+      "labels_nonnull": 7,
+      "labels_count": 7
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        671,
+        938,
+        1542,
+        1710,
+        1823,
+        2453
+      ],
+      "notes": [],
+      "label_count": 7,
+      "nonnull_label_count": 6,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        224,
+        330,
+        732,
+        890,
+        970,
+        1676
+      ],
+      "notes": [],
+      "label_count": 7,
+      "nonnull_label_count": 6,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": true
+}

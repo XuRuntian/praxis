@@ -1,0 +1,5 @@
+numpy==1.26.4
+scipy==1.13.1
+numba==0.60.0
+llvmlite==0.43.0
+pyarrow==23.0.0

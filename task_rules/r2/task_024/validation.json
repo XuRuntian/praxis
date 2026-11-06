@@ -1,0 +1,107 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        84,
+        136,
+        264,
+        327,
+        437
+      ],
+      "reference_boundaries": [
+        82,
+        141,
+        266,
+        310,
+        438
+      ],
+      "signed_errors_frames": [
+        2,
+        -5,
+        -2,
+        17,
+        -1
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.27,
+      "max_absolute_supported_boundary_error_frames": 17,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.05959492320905698
+      ],
+      "labels_nonnull": 6,
+      "labels_count": 6
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        76,
+        113,
+        374,
+        421,
+        580
+      ],
+      "reference_boundaries": [
+        79,
+        106,
+        372,
+        443,
+        579
+      ],
+      "signed_errors_frames": [
+        -3,
+        7,
+        2,
+        -22,
+        1
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.35,
+      "max_absolute_supported_boundary_error_frames": 22,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.06660824514871556
+      ],
+      "labels_nonnull": 6,
+      "labels_count": 6
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        78,
+        110,
+        373,
+        432,
+        580
+      ],
+      "notes": [],
+      "label_count": 6,
+      "nonnull_label_count": 6,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        83,
+        138,
+        265,
+        318,
+        438
+      ],
+      "notes": [],
+      "label_count": 6,
+      "nonnull_label_count": 6,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": true
+}

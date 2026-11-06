@@ -1,0 +1,105 @@
+{
+  "fps": 30,
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        31
+      ],
+      "names": [
+        "follower_right_arm_joint1.pos",
+        "follower_right_arm_joint2.pos",
+        "follower_right_arm_joint3.pos",
+        "follower_right_arm_joint4.pos",
+        "follower_right_arm_joint5.pos",
+        "follower_right_arm_joint6.pos",
+        "follower_right_arm_joint7.pos",
+        "follower_right_gripper.pos",
+        "follower_left_arm_joint1.pos",
+        "follower_left_arm_joint2.pos",
+        "follower_left_arm_joint3.pos",
+        "follower_left_arm_joint4.pos",
+        "follower_left_arm_joint5.pos",
+        "follower_left_arm_joint6.pos",
+        "follower_left_arm_joint7.pos",
+        "follower_left_gripper.pos",
+        "follower_leg_joint1.pos",
+        "follower_leg_joint2.pos",
+        "follower_leg_joint3.pos",
+        "follower_leg_joint4.pos",
+        "follower_leg_joint5.pos",
+        "follower_head_joint1.pos",
+        "follower_head_joint2.pos",
+        "follower_chassis_pos1.pos",
+        "follower_chassis_pos2.pos",
+        "follower_chassis_pos3.pos",
+        "follower_chassis_pos4.pos",
+        "follower_chassis_vel1.pos",
+        "follower_chassis_vel2.pos",
+        "follower_chassis_vel3.pos",
+        "follower_chassis_vel4.pos"
+      ]
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        31
+      ],
+      "names": [
+        "leader_right_arm_joint1.pos",
+        "leader_right_arm_joint2.pos",
+        "leader_right_arm_joint3.pos",
+        "leader_right_arm_joint4.pos",
+        "leader_right_arm_joint5.pos",
+        "leader_right_arm_joint6.pos",
+        "leader_right_arm_joint7.pos",
+        "leader_right_gripper.pos",
+        "leader_left_arm_joint1.pos",
+        "leader_left_arm_joint2.pos",
+        "leader_left_arm_joint3.pos",
+        "leader_left_arm_joint4.pos",
+        "leader_left_arm_joint5.pos",
+        "leader_left_arm_joint6.pos",
+        "leader_left_arm_joint7.pos",
+        "leader_left_gripper.pos",
+        "leader_leg_joint1.pos",
+        "leader_leg_joint2.pos",
+        "leader_leg_joint3.pos",
+        "leader_leg_joint4.pos",
+        "leader_leg_joint5.pos",
+        "leader_head_joint1.pos",
+        "leader_head_joint2.pos",
+        "leader_chassis_pos1.pos",
+        "leader_chassis_pos2.pos",
+        "leader_chassis_pos3.pos",
+        "leader_chassis_pos4.pos",
+        "leader_chassis_vel1.pos",
+        "leader_chassis_vel2.pos",
+        "leader_chassis_vel3.pos",
+        "leader_chassis_vel4.pos"
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    }
+  },
+  "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+}

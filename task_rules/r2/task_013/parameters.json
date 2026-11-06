@@ -1,0 +1,519 @@
+{
+  "method": "grip_fsm",
+  "fraction": 0.9,
+  "alignment": "pose_grip",
+  "why": "完整过程有四次交替夹爪动作，与抓取/释放边界一一对应。95%阈值在单范例训练时因两次物体夹持平台不同而失败；90%在两个方向全部检出，误差1–5帧。选90%实测状态机。",
+  "task_id": "task_013",
+  "dataset": "Franka_pot_bread_2_2560",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "pose_[xyz]\\.pos|gripper"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_arm_joint_1.pos",
+          "follower_arm_joint_2.pos",
+          "follower_arm_joint_3.pos",
+          "follower_arm_joint_4.pos",
+          "follower_arm_joint_5.pos",
+          "follower_arm_joint_6.pos",
+          "follower_arm_joint_7.pos",
+          "follower_arm_gripper.pos",
+          "follower_arm_pose_x.pos",
+          "follower_arm_pose_y.pos",
+          "follower_arm_pose_z.pos",
+          "follower_arm_pose_rx.pos",
+          "follower_arm_pose_ry.pos",
+          "follower_arm_pose_rz.pos"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_arm_joint_1.pos",
+          "follower_arm_joint_2.pos",
+          "follower_arm_joint_3.pos",
+          "follower_arm_joint_4.pos",
+          "follower_arm_joint_5.pos",
+          "follower_arm_joint_6.pos",
+          "follower_arm_joint_7.pos",
+          "follower_arm_gripper.pos",
+          "follower_arm_pose_x.pos",
+          "follower_arm_pose_y.pos",
+          "follower_arm_pose_z.pos",
+          "follower_arm_pose_rx.pos",
+          "follower_arm_pose_ry.pos",
+          "follower_arm_pose_rz.pos"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector pick up bread slice from blue plastic bowl, grasp anchor main_body, grasp method pinch",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "pick",
+        "text": "effector pick up bread slice from blue plastic bowl, grasp anchor main_body, grasp method pinch",
+        "slots": {
+          "grasp_anchor": "main_body",
+          "grasp_method": "pinch",
+          "manipulated_object": {
+            "name": "bread slice",
+            "color": "",
+            "material": ""
+          },
+          "source_anchor": {
+            "name": "plastic bowl",
+            "color": "blue",
+            "material": ""
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector place bread slice in pot and release it",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "place",
+        "text": "effector place bread slice in pot and release it",
+        "slots": {
+          "destination_anchor": {
+            "name": "pot",
+            "color": "",
+            "material": ""
+          },
+          "manipulated_object": {
+            "name": "bread slice",
+            "color": "",
+            "material": ""
+          },
+          "placement_relation": "in"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector pick up transparent pot lid from table, grasp anchor top, grasp method pinch",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "pick",
+        "text": "effector pick up transparent pot lid from table, grasp anchor top, grasp method pinch",
+        "slots": {
+          "grasp_anchor": "top",
+          "grasp_method": "pinch",
+          "manipulated_object": {
+            "name": "pot lid",
+            "color": "transparent",
+            "material": ""
+          },
+          "source_anchor": {
+            "name": "table",
+            "color": "",
+            "material": ""
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector place transparent pot lid on pot and release it",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "place",
+        "text": "effector place transparent pot lid on pot and release it",
+        "slots": {
+          "destination_anchor": {
+            "name": "pot",
+            "color": "",
+            "material": ""
+          },
+          "manipulated_object": {
+            "name": "pot lid",
+            "color": "transparent",
+            "material": ""
+          },
+          "placement_relation": "on"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector return to initial pose",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "return_to_initial_pose",
+        "text": "effector return to initial pose",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 1644,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 410,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pick up bread slice from blue plastic bowl, grasp anchor main_body, grasp method pinch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pick",
+            "text": "effector pick up bread slice from blue plastic bowl, grasp anchor main_body, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "main_body",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "name": "bread slice",
+                "color": "",
+                "material": ""
+              },
+              "source_anchor": {
+                "name": "plastic bowl",
+                "color": "blue",
+                "material": ""
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 410,
+          "end_frame": 707,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector place bread slice in pot and release it",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "place",
+            "text": "effector place bread slice in pot and release it",
+            "slots": {
+              "destination_anchor": {
+                "name": "pot",
+                "color": "",
+                "material": ""
+              },
+              "manipulated_object": {
+                "name": "bread slice",
+                "color": "",
+                "material": ""
+              },
+              "placement_relation": "in"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 707,
+          "end_frame": 1120,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pick up transparent pot lid from table, grasp anchor top, grasp method pinch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pick",
+            "text": "effector pick up transparent pot lid from table, grasp anchor top, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "top",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "name": "pot lid",
+                "color": "transparent",
+                "material": ""
+              },
+              "source_anchor": {
+                "name": "table",
+                "color": "",
+                "material": ""
+              }
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 1120,
+          "end_frame": 1565,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector place transparent pot lid on pot and release it",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "place",
+            "text": "effector place transparent pot lid on pot and release it",
+            "slots": {
+              "destination_anchor": {
+                "name": "pot",
+                "color": "",
+                "material": ""
+              },
+              "manipulated_object": {
+                "name": "pot lid",
+                "color": "transparent",
+                "material": ""
+              },
+              "placement_relation": "on"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 1565,
+          "end_frame": 1644,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector return to initial pose",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "return_to_initial_pose",
+            "text": "effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 1753,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 341,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pick up bread slice from blue plastic bowl, grasp anchor main_body, grasp method pinch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pick",
+            "text": "effector pick up bread slice from blue plastic bowl, grasp anchor main_body, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "main_body",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "name": "bread slice",
+                "color": "",
+                "material": ""
+              },
+              "source_anchor": {
+                "name": "plastic bowl",
+                "color": "blue",
+                "material": ""
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 341,
+          "end_frame": 665,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector place bread slice in pot and release it",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "place",
+            "text": "effector place bread slice in pot and release it",
+            "slots": {
+              "destination_anchor": {
+                "name": "pot",
+                "color": "",
+                "material": ""
+              },
+              "manipulated_object": {
+                "name": "bread slice",
+                "color": "",
+                "material": ""
+              },
+              "placement_relation": "in"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 665,
+          "end_frame": 1179,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pick up transparent pot lid from table, grasp anchor top, grasp method pinch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pick",
+            "text": "effector pick up transparent pot lid from table, grasp anchor top, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "top",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "name": "pot lid",
+                "color": "transparent",
+                "material": ""
+              },
+              "source_anchor": {
+                "name": "table",
+                "color": "",
+                "material": ""
+              }
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 1179,
+          "end_frame": 1610,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector place transparent pot lid on pot and release it",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "place",
+            "text": "effector place transparent pot lid on pot and release it",
+            "slots": {
+              "destination_anchor": {
+                "name": "pot",
+                "color": "",
+                "material": ""
+              },
+              "manipulated_object": {
+                "name": "pot lid",
+                "color": "transparent",
+                "material": ""
+              },
+              "placement_relation": "on"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 1610,
+          "end_frame": 1753,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector return to initial pose",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "return_to_initial_pose",
+            "text": "effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "boundary_index": 0,
+      "index": 7,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 184.8,
+      "levels": [
+        3.0,
+        205.0
+      ],
+      "completion_fraction": 0.9,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 1,
+      "index": 7,
+      "column": "observation.state",
+      "direction": -1,
+      "threshold": 23.199999999999996,
+      "levels": [
+        3.0,
+        205.0
+      ],
+      "completion_fraction": 0.9,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 2,
+      "index": 7,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 184.8,
+      "levels": [
+        3.0,
+        205.0
+      ],
+      "completion_fraction": 0.9,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 3,
+      "index": 7,
+      "column": "observation.state",
+      "direction": -1,
+      "threshold": 23.199999999999996,
+      "levels": [
+        3.0,
+        205.0
+      ],
+      "completion_fraction": 0.9,
+      "hold": 3,
+      "occurrence": "first"
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": false
+}

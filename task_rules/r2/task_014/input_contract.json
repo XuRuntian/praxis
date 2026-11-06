@@ -1,0 +1,71 @@
+{
+  "fps": 30,
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": [
+        "follower_left_arm_joint_1_rad.pos",
+        "follower_left_arm_joint_2_rad.pos",
+        "follower_left_arm_joint_3_rad.pos",
+        "follower_left_arm_joint_4_rad.pos",
+        "follower_left_arm_joint_5_rad.pos",
+        "follower_left_arm_joint_6_rad.pos",
+        "follower_left_gripper_degree_mm.pos",
+        "follower_right_arm_joint_1_rad.pos",
+        "follower_right_arm_joint_2_rad.pos",
+        "follower_right_arm_joint_3_rad.pos",
+        "follower_right_arm_joint_4_rad.pos",
+        "follower_right_arm_joint_5_rad.pos",
+        "follower_right_arm_joint_6_rad.pos",
+        "follower_right_gripper_degree_mm.pos"
+      ]
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": [
+        "leader_left_arm_joint_1_rad.pos",
+        "leader_left_arm_joint_2_rad.pos",
+        "leader_left_arm_joint_3_rad.pos",
+        "leader_left_arm_joint_4_rad.pos",
+        "leader_left_arm_joint_5_rad.pos",
+        "leader_left_arm_joint_6_rad.pos",
+        "leader_left_gripper_degree_mm.pos",
+        "leader_right_arm_joint_1_rad.pos",
+        "leader_right_arm_joint_2_rad.pos",
+        "leader_right_arm_joint_3_rad.pos",
+        "leader_right_arm_joint_4_rad.pos",
+        "leader_right_arm_joint_5_rad.pos",
+        "leader_right_arm_joint_6_rad.pos",
+        "leader_right_gripper_degree_mm.pos"
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    }
+  },
+  "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+}

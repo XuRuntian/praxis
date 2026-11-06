@@ -1,0 +1,470 @@
+{
+  "method": "dtw",
+  "alignment": "wrist_only",
+  "why": "长双手整理过程的手指姿态差异大；全骨架对齐可偏255帧，腕向量则把最大误差降至22帧。腕的路径更适合对应折叠阶段，加入手指或速度未改善。两个折叠阶段仍有约1秒边界模糊。",
+  "task_id": "task_024",
+  "dataset": "folding_towels",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state.wrist",
+        "all"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 20,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          201
+        ],
+        "names": [
+          "full_skeleton",
+          "wrist_pose",
+          "finger_joints",
+          "head_pose"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          201
+        ],
+        "names": [
+          "full_skeleton",
+          "wrist_pose",
+          "finger_joints",
+          "head_pose"
+        ]
+      },
+      "observation.state.full_skeleton": {
+        "dtype": "float32",
+        "shape": [
+          150
+        ],
+        "names": [
+          "left_full_skeleton",
+          "right_full_skeleton"
+        ]
+      },
+      "observation.state.wrist": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "left_wrist_pose",
+          "right_wrist_pose"
+        ]
+      },
+      "observation.state.finger": {
+        "dtype": "float32",
+        "shape": [
+          30
+        ],
+        "names": [
+          "left_finger_joints",
+          "right_finger_joints"
+        ]
+      },
+      "observation.state.head": {
+        "dtype": "float32",
+        "shape": [
+          7
+        ],
+        "names": [
+          "head_pose"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector pick up towel from desktop, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "pick",
+        "text": "left_effector pick up towel from desktop, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "towel",
+          "source_anchor": "desktop",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector place towel on desktop and release it",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "place",
+        "text": "left_effector place towel on desktop and release it",
+        "slots": {
+          "manipulated_object": "towel",
+          "placement_relation": "on",
+          "destination_anchor": "desktop"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors pull towel at desktop from top to/toward bottom, causing towel to flat",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "pull",
+        "text": "both_effectors pull towel at desktop from top to/toward bottom, causing towel to flat",
+        "slots": {
+          "interaction_target": "towel",
+          "pull_anchor": "desktop",
+          "source_anchor": "top",
+          "destination_anchor": "bottom",
+          "changed_object": "towel",
+          "state_change": "flat"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors fold bottom of the towel of towel along center of the towel toward/onto top, causing towel to fold",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "fold",
+        "text": "both_effectors fold bottom of the towel of towel along center of the towel toward/onto top, causing towel to fold",
+        "slots": {
+          "manipulated_object": "towel",
+          "folded_part_anchor": "bottom of the towel",
+          "fold_line_anchor": "center of the towel",
+          "fold_target_anchor": "top",
+          "changed_object": "towel",
+          "state_change": "fold"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector fold left of the towel of towel along center of the towel toward/onto right, causing towel to fold",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "fold",
+        "text": "left_effector fold left of the towel of towel along center of the towel toward/onto right, causing towel to fold",
+        "slots": {
+          "manipulated_object": "towel",
+          "folded_part_anchor": "left of the towel",
+          "fold_line_anchor": "center of the towel",
+          "fold_target_anchor": "right",
+          "changed_object": "towel",
+          "state_change": "fold"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector place towel into basket and release it",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "place",
+        "text": "right_effector place towel into basket and release it",
+        "slots": {
+          "manipulated_object": "towel",
+          "placement_relation": "into",
+          "destination_anchor": "basket"
+        }
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 705,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 79,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up towel from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up towel from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "towel",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 79,
+          "end_frame": 106,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector place towel on desktop and release it",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "place",
+            "text": "left_effector place towel on desktop and release it",
+            "slots": {
+              "manipulated_object": "towel",
+              "placement_relation": "on",
+              "destination_anchor": "desktop"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 106,
+          "end_frame": 372,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors pull towel at desktop from top to/toward bottom, causing towel to flat",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "pull",
+            "text": "both_effectors pull towel at desktop from top to/toward bottom, causing towel to flat",
+            "slots": {
+              "interaction_target": "towel",
+              "pull_anchor": "desktop",
+              "source_anchor": "top",
+              "destination_anchor": "bottom",
+              "changed_object": "towel",
+              "state_change": "flat"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 372,
+          "end_frame": 443,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors fold bottom of the towel of towel along center of the towel toward/onto top, causing towel to fold",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "fold",
+            "text": "both_effectors fold bottom of the towel of towel along center of the towel toward/onto top, causing towel to fold",
+            "slots": {
+              "manipulated_object": "towel",
+              "folded_part_anchor": "bottom of the towel",
+              "fold_line_anchor": "center of the towel",
+              "fold_target_anchor": "top",
+              "changed_object": "towel",
+              "state_change": "fold"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 443,
+          "end_frame": 579,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector fold left of the towel of towel along center of the towel toward/onto right, causing towel to fold",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "fold",
+            "text": "left_effector fold left of the towel of towel along center of the towel toward/onto right, causing towel to fold",
+            "slots": {
+              "manipulated_object": "towel",
+              "folded_part_anchor": "left of the towel",
+              "fold_line_anchor": "center of the towel",
+              "fold_target_anchor": "right",
+              "changed_object": "towel",
+              "state_change": "fold"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 579,
+          "end_frame": 705,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place towel into basket and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place towel into basket and release it",
+            "slots": {
+              "manipulated_object": "towel",
+              "placement_relation": "into",
+              "destination_anchor": "basket"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 538,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 82,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up towel from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up towel from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "towel",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 82,
+          "end_frame": 141,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector place towel on desktop and release it",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "place",
+            "text": "left_effector place towel on desktop and release it",
+            "slots": {
+              "manipulated_object": "towel",
+              "placement_relation": "on",
+              "destination_anchor": "desktop"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 141,
+          "end_frame": 266,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors pull towel at desktop from top to/toward bottom, causing towel to flat",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "pull",
+            "text": "both_effectors pull towel at desktop from top to/toward bottom, causing towel to flat",
+            "slots": {
+              "interaction_target": "towel",
+              "pull_anchor": "desktop",
+              "source_anchor": "top",
+              "destination_anchor": "bottom",
+              "changed_object": "towel",
+              "state_change": "flat"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 266,
+          "end_frame": 310,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors fold bottom of the towel of towel along center toward/onto top, causing towel to fold",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "fold",
+            "text": "both_effectors fold bottom of the towel of towel along center toward/onto top, causing towel to fold",
+            "slots": {
+              "manipulated_object": "towel",
+              "folded_part_anchor": "bottom of the towel",
+              "fold_line_anchor": "center",
+              "fold_target_anchor": "top",
+              "changed_object": "towel",
+              "state_change": "fold"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 310,
+          "end_frame": 438,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector fold left of the towel of towel along center toward/onto right, causing towel to fold",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "fold",
+            "text": "left_effector fold left of the towel of towel along center toward/onto right, causing towel to fold",
+            "slots": {
+              "manipulated_object": "towel",
+              "folded_part_anchor": "left of the towel",
+              "fold_line_anchor": "center",
+              "fold_target_anchor": "right",
+              "changed_object": "towel",
+              "state_change": "fold"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 438,
+          "end_frame": 538,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place towel into basket and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place towel into basket and release it",
+            "slots": {
+              "manipulated_object": "towel",
+              "placement_relation": "into",
+              "destination_anchor": "basket"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state.wrist"
+  ],
+  "unresolved": true
+}

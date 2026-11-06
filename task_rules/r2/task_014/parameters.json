@@ -1,0 +1,331 @@
+{
+  "method": "dtw",
+  "alignment": "right_joint_grip",
+  "why": "两范例准备阶段夹爪开合次数不同，简单计数会错配。稳定的右臂关节路径包含拾取后接近、按压、放回和离开；右关节+夹爪对齐误差1–4帧，命令候选没有改善，故采用实测右臂路径。",
+  "task_id": "task_014",
+  "dataset": "Galaxea_R1_Lite_stamp",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "right"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_left_arm_joint_1_rad.pos",
+          "follower_left_arm_joint_2_rad.pos",
+          "follower_left_arm_joint_3_rad.pos",
+          "follower_left_arm_joint_4_rad.pos",
+          "follower_left_arm_joint_5_rad.pos",
+          "follower_left_arm_joint_6_rad.pos",
+          "follower_left_gripper_degree_mm.pos",
+          "follower_right_arm_joint_1_rad.pos",
+          "follower_right_arm_joint_2_rad.pos",
+          "follower_right_arm_joint_3_rad.pos",
+          "follower_right_arm_joint_4_rad.pos",
+          "follower_right_arm_joint_5_rad.pos",
+          "follower_right_arm_joint_6_rad.pos",
+          "follower_right_gripper_degree_mm.pos"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "leader_left_arm_joint_1_rad.pos",
+          "leader_left_arm_joint_2_rad.pos",
+          "leader_left_arm_joint_3_rad.pos",
+          "leader_left_arm_joint_4_rad.pos",
+          "leader_left_arm_joint_5_rad.pos",
+          "leader_left_arm_joint_6_rad.pos",
+          "leader_left_gripper_degree_mm.pos",
+          "leader_right_arm_joint_1_rad.pos",
+          "leader_right_arm_joint_2_rad.pos",
+          "leader_right_arm_joint_3_rad.pos",
+          "leader_right_arm_joint_4_rad.pos",
+          "leader_right_arm_joint_5_rad.pos",
+          "leader_right_arm_joint_6_rad.pos",
+          "leader_right_gripper_degree_mm.pos"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up Seal from Table, grasp anchor Main body, grasp method pinch",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up Seal from Table, grasp anchor Main body, grasp method pinch",
+        "slots": {
+          "manipulated_object": "Seal",
+          "source_anchor": "Table",
+          "grasp_anchor": "Main body",
+          "grasp_method": "pinch"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector press Bottom right of White paper at Desktop and affect White paper",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "press",
+        "text": "right_effector press Bottom right of White paper at Desktop and affect White paper",
+        "slots": {
+          "press_anchor": "Bottom right",
+          "interaction_target": "White paper",
+          "position_anchor": "Desktop",
+          "changed_object": "White paper",
+          "state_change": "Stamp"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector place Seal on table and release it",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "place",
+        "text": "right_effector place Seal on table and release it",
+        "slots": {
+          "destination_anchor": "table",
+          "manipulated_object": "Seal",
+          "placement_relation": "on"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector manipulate none at none and affect none",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "manipulate",
+        "text": "right_effector manipulate none at none and affect none",
+        "slots": {
+          "interaction_target": "none",
+          "position_anchor": "none",
+          "changed_object": "none",
+          "state_change": "none"
+        }
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 583,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 317,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up Seal from Table, grasp anchor Main body, grasp method pinch",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up Seal from Table, grasp anchor Main body, grasp method pinch",
+            "slots": {
+              "manipulated_object": "Seal",
+              "source_anchor": "Table",
+              "grasp_anchor": "Main body",
+              "grasp_method": "pinch"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 317,
+          "end_frame": 398,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector press Bottom right of White paper at Desktop and affect White paper",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "press",
+            "text": "right_effector press Bottom right of White paper at Desktop and affect White paper",
+            "slots": {
+              "press_anchor": "Bottom right",
+              "interaction_target": "White paper",
+              "position_anchor": "Desktop",
+              "changed_object": "White paper",
+              "state_change": "Stamp"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 398,
+          "end_frame": 451,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place Seal on table and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place Seal on table and release it",
+            "slots": {
+              "destination_anchor": "table",
+              "manipulated_object": "Seal",
+              "placement_relation": "on"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 451,
+          "end_frame": 583,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector manipulate none at none and affect none",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "manipulate",
+            "text": "right_effector manipulate none at none and affect none",
+            "slots": {
+              "interaction_target": "none",
+              "position_anchor": "none",
+              "changed_object": "none",
+              "state_change": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 468,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 207,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up Seal from Table, grasp anchor Main body, grasp method pinch",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up Seal from Table, grasp anchor Main body, grasp method pinch",
+            "slots": {
+              "manipulated_object": "Seal",
+              "source_anchor": "Table",
+              "grasp_anchor": "Main body",
+              "grasp_method": "pinch"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 207,
+          "end_frame": 300,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector press Bottom right of White paper at Table and affect White paper",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "press",
+            "text": "right_effector press Bottom right of White paper at Table and affect White paper",
+            "slots": {
+              "press_anchor": "Bottom right",
+              "interaction_target": "White paper",
+              "position_anchor": "Table",
+              "changed_object": "White paper",
+              "state_change": "Stamp"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 300,
+          "end_frame": 362,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place Seal on table and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place Seal on table and release it",
+            "slots": {
+              "destination_anchor": "table",
+              "manipulated_object": "Seal",
+              "placement_relation": "on"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 362,
+          "end_frame": 468,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector manipulate none at none and affect none",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "manipulate",
+            "text": "right_effector manipulate none at none and affect none",
+            "slots": {
+              "interaction_target": "none",
+              "position_anchor": "none",
+              "changed_object": "none",
+              "state_change": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": false
+}

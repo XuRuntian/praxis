@@ -1,0 +1,137 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        885,
+        1017,
+        1115,
+        1222,
+        1336,
+        1423,
+        1526
+      ],
+      "reference_boundaries": [
+        812,
+        1010,
+        1118,
+        1227,
+        1326,
+        1428,
+        1529
+      ],
+      "signed_errors_frames": [
+        73,
+        7,
+        -3,
+        -5,
+        10,
+        -5,
+        -3
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.18333333333333332,
+      "max_absolute_supported_boundary_error_frames": 10,
+      "notes": [
+        "early_stages_unobservable",
+        "flat_prefix_not_time_warped",
+        "two_exemplar_subject_conflicts",
+        "First boundary is physical-motion onset, not recoverable semantic start. Early six boundaries deliberately not predicted."
+      ],
+      "alignment_costs": [
+        0.009416712931932546
+      ],
+      "labels_nonnull": 7,
+      "labels_count": 8
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        914,
+        997,
+        1099,
+        1180,
+        1235,
+        1325,
+        1398
+      ],
+      "reference_boundaries": [
+        831,
+        1004,
+        1094,
+        1175,
+        1243,
+        1320,
+        1395
+      ],
+      "signed_errors_frames": [
+        83,
+        -7,
+        5,
+        5,
+        -8,
+        5,
+        3
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.18333333333333332,
+      "max_absolute_supported_boundary_error_frames": 8,
+      "notes": [
+        "early_stages_unobservable",
+        "flat_prefix_not_time_warped",
+        "two_exemplar_subject_conflicts",
+        "First boundary is physical-motion onset, not recoverable semantic start. Early six boundaries deliberately not predicted."
+      ],
+      "alignment_costs": [
+        0.008899400501190495
+      ],
+      "labels_nonnull": 7,
+      "labels_count": 8
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        914,
+        1000,
+        1096,
+        1178,
+        1239,
+        1322,
+        1396
+      ],
+      "notes": [
+        "early_stages_unobservable",
+        "flat_prefix_not_time_warped",
+        "two_exemplar_subject_conflicts"
+      ],
+      "label_count": 8,
+      "nonnull_label_count": 5,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        885,
+        1013,
+        1117,
+        1225,
+        1331,
+        1425,
+        1527
+      ],
+      "notes": [
+        "early_stages_unobservable",
+        "flat_prefix_not_time_warped",
+        "two_exemplar_subject_conflicts"
+      ],
+      "label_count": 8,
+      "nonnull_label_count": 5,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": true
+}

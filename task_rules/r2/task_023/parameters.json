@@ -1,0 +1,489 @@
+{
+  "method": "dtw",
+  "alignment": "wrist_velocity",
+  "why": "通道有腕、手指、骨架分组但无逐轴语义。可以在原始向量分量上做无量纲轨迹比较，不把分量猜为xyz或四元数。腕向量+变化率比手指/全骨架更稳定，双向最大13帧；阶段标签仅按对应迁移。",
+  "task_id": "task_023",
+  "dataset": "build_with_block",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state.wrist",
+        "all"
+      ]
+    ],
+    "smooth_seconds": 0.12,
+    "stride": 2,
+    "warp_penalty": 0.02,
+    "derivative_weight": 0.1
+  },
+  "channels": {
+    "fps": 20,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          201
+        ],
+        "names": [
+          "full_skeleton",
+          "wrist_pose",
+          "finger_joints",
+          "head_pose"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          201
+        ],
+        "names": [
+          "full_skeleton",
+          "wrist_pose",
+          "finger_joints",
+          "head_pose"
+        ]
+      },
+      "observation.state.full_skeleton": {
+        "dtype": "float32",
+        "shape": [
+          150
+        ],
+        "names": [
+          "left_full_skeleton",
+          "right_full_skeleton"
+        ]
+      },
+      "observation.state.wrist": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "left_wrist_pose",
+          "right_wrist_pose"
+        ]
+      },
+      "observation.state.finger": {
+        "dtype": "float32",
+        "shape": [
+          30
+        ],
+        "names": [
+          "left_finger_joints",
+          "right_finger_joints"
+        ]
+      },
+      "observation.state.head": {
+        "dtype": "float32",
+        "shape": [
+          7
+        ],
+        "names": [
+          "head_pose"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "block",
+          "source_anchor": "desktop",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector place block on desktop and release it",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "place",
+        "text": "right_effector place block on desktop and release it",
+        "slots": {
+          "manipulated_object": "block",
+          "placement_relation": "on",
+          "destination_anchor": "desktop"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "pick",
+        "text": "left_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "block",
+          "source_anchor": "desktop",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector place block on block and release it",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "place",
+        "text": "left_effector place block on block and release it",
+        "slots": {
+          "manipulated_object": "block",
+          "placement_relation": "on",
+          "destination_anchor": "block"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+        "slots": {
+          "manipulated_object": "block",
+          "source_anchor": "desktop",
+          "grasp_anchor": "mainboby",
+          "grasp_method": "pick"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector place block on block and release it",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "place",
+        "text": "right_effector place block on block and release it",
+        "slots": {
+          "manipulated_object": "block",
+          "placement_relation": "on",
+          "destination_anchor": "block"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors performs no task-relevant manipulation",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "none",
+        "text": "both_effectors performs no task-relevant manipulation",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 261,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 75,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "block",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 75,
+          "end_frame": 97,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place block on desktop and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place block on desktop and release it",
+            "slots": {
+              "manipulated_object": "block",
+              "placement_relation": "on",
+              "destination_anchor": "desktop"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 97,
+          "end_frame": 121,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "block",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 121,
+          "end_frame": 144,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector place block on block and release it",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "place",
+            "text": "left_effector place block on block and release it",
+            "slots": {
+              "manipulated_object": "block",
+              "placement_relation": "on",
+              "destination_anchor": "block"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 144,
+          "end_frame": 181,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "block",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 181,
+          "end_frame": 228,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place block on block and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place block on block and release it",
+            "slots": {
+              "manipulated_object": "block",
+              "placement_relation": "on",
+              "destination_anchor": "block"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 228,
+          "end_frame": 261,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors performs no task-relevant manipulation",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "none",
+            "text": "both_effectors performs no task-relevant manipulation",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 234,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 64,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "block",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 64,
+          "end_frame": 89,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place block on desktop and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place block on desktop and release it",
+            "slots": {
+              "manipulated_object": "block",
+              "placement_relation": "on",
+              "destination_anchor": "desktop"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 89,
+          "end_frame": 114,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "block",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 114,
+          "end_frame": 137,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector place block on block and release it",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "place",
+            "text": "left_effector place block on block and release it",
+            "slots": {
+              "manipulated_object": "block",
+              "placement_relation": "on",
+              "destination_anchor": "block"
+            }
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 137,
+          "end_frame": 169,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up block from desktop, grasp anchor mainboby, grasp method pick",
+            "slots": {
+              "manipulated_object": "block",
+              "source_anchor": "desktop",
+              "grasp_anchor": "mainboby",
+              "grasp_method": "pick"
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 169,
+          "end_frame": 199,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector place block on block and release it",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "place",
+            "text": "right_effector place block on block and release it",
+            "slots": {
+              "manipulated_object": "block",
+              "placement_relation": "on",
+              "destination_anchor": "block"
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 199,
+          "end_frame": 234,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors performs no task-relevant manipulation",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "none",
+            "text": "both_effectors performs no task-relevant manipulation",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state.wrist"
+  ],
+  "unresolved": true
+}

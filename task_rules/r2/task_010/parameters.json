@@ -1,0 +1,358 @@
+{
+  "method": "hybrid_press",
+  "alignment": "pose_velocity",
+  "why": "与两范例人工动作对应，按压结束应是末端离开低位而非夹爪变化。中间阶段存在停留，纯位姿对齐双向偏差约27帧，加入速度后改善但仍25帧；记录返回阶段边界的不确定性，不声称精确物理触发。",
+  "task_id": "task_010",
+  "dataset": "Franka_click_bell_twice_clean_2551",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "pose_[xyz]\\.pos"
+      ]
+    ],
+    "smooth_seconds": 0.12,
+    "stride": 2,
+    "warp_penalty": 0.02,
+    "derivative_weight": 0.1
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_arm_joint_1.pos",
+          "follower_arm_joint_2.pos",
+          "follower_arm_joint_3.pos",
+          "follower_arm_joint_4.pos",
+          "follower_arm_joint_5.pos",
+          "follower_arm_joint_6.pos",
+          "follower_arm_joint_7.pos",
+          "follower_arm_gripper.pos",
+          "follower_arm_pose_x.pos",
+          "follower_arm_pose_y.pos",
+          "follower_arm_pose_z.pos",
+          "follower_arm_pose_rx.pos",
+          "follower_arm_pose_ry.pos",
+          "follower_arm_pose_rz.pos"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_arm_joint_1.pos",
+          "follower_arm_joint_2.pos",
+          "follower_arm_joint_3.pos",
+          "follower_arm_joint_4.pos",
+          "follower_arm_joint_5.pos",
+          "follower_arm_joint_6.pos",
+          "follower_arm_joint_7.pos",
+          "follower_arm_gripper.pos",
+          "follower_arm_pose_x.pos",
+          "follower_arm_pose_y.pos",
+          "follower_arm_pose_z.pos",
+          "follower_arm_pose_rx.pos",
+          "follower_arm_pose_ry.pos",
+          "follower_arm_pose_rz.pos"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector press top of green button at main_body and affect green button",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "press",
+        "text": "effector press top of green button at main_body and affect green button",
+        "slots": {
+          "changed_object": {
+            "name": "button",
+            "color": "green",
+            "material": ""
+          },
+          "interaction_target": {
+            "name": "button",
+            "color": "green",
+            "material": ""
+          },
+          "position_anchor": "main_body",
+          "press_anchor": "top"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector return to initial pose",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "return_to_initial_pose",
+        "text": "effector return to initial pose",
+        "slots": {}
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector press top of red button at main_body and affect red button",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "press",
+        "text": "effector press top of red button at main_body and affect red button",
+        "slots": {
+          "changed_object": {
+            "name": "button",
+            "color": "red",
+            "material": ""
+          },
+          "interaction_target": {
+            "name": "button",
+            "color": "red",
+            "material": ""
+          },
+          "position_anchor": "main_body",
+          "press_anchor": "top"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector return to initial pose",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "return_to_initial_pose",
+        "text": "effector return to initial pose",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 970,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 314,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector press top of green button at main_body and affect green button",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "press",
+            "text": "effector press top of green button at main_body and affect green button",
+            "slots": {
+              "changed_object": {
+                "name": "button",
+                "color": "green",
+                "material": ""
+              },
+              "interaction_target": {
+                "name": "button",
+                "color": "green",
+                "material": ""
+              },
+              "position_anchor": "main_body",
+              "press_anchor": "top"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 314,
+          "end_frame": 458,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector return to initial pose",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "return_to_initial_pose",
+            "text": "effector return to initial pose",
+            "slots": {}
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 458,
+          "end_frame": 857,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector press top of red button at main_body and affect red button",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "press",
+            "text": "effector press top of red button at main_body and affect red button",
+            "slots": {
+              "changed_object": {
+                "name": "button",
+                "color": "red",
+                "material": ""
+              },
+              "interaction_target": {
+                "name": "button",
+                "color": "red",
+                "material": ""
+              },
+              "position_anchor": "main_body",
+              "press_anchor": "top"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 857,
+          "end_frame": 970,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector return to initial pose",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "return_to_initial_pose",
+            "text": "effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 991,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 341,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector press top of green button at main_body and affect green button",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "press",
+            "text": "effector press top of green button at main_body and affect green button",
+            "slots": {
+              "changed_object": {
+                "name": "button",
+                "color": "green",
+                "material": ""
+              },
+              "interaction_target": {
+                "name": "button",
+                "color": "green",
+                "material": ""
+              },
+              "position_anchor": "main_body",
+              "press_anchor": "top"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 341,
+          "end_frame": 467,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector return to initial pose",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "return_to_initial_pose",
+            "text": "effector return to initial pose",
+            "slots": {}
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 467,
+          "end_frame": 865,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector press top of red button at main_body and affect red button",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "press",
+            "text": "effector press top of red button at main_body and affect red button",
+            "slots": {
+              "changed_object": {
+                "name": "button",
+                "color": "red",
+                "material": ""
+              },
+              "interaction_target": {
+                "name": "button",
+                "color": "red",
+                "material": ""
+              },
+              "position_anchor": "main_body",
+              "press_anchor": "top"
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 865,
+          "end_frame": 991,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector return to initial pose",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "return_to_initial_pose",
+            "text": "effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "press_velocity_threshold": 0.08615769582713415,
+  "press_threshold_exemplar_values": [
+    0.07908974309085659,
+    0.12211440170181082,
+    0.04262176355028624,
+    0.10080487496558294
+  ],
+  "gripper_high_threshold": 150,
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": true
+}

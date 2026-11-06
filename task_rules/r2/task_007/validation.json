@@ -1,0 +1,83 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        72,
+        136
+      ],
+      "reference_boundaries": [
+        69,
+        133
+      ],
+      "signed_errors_frames": [
+        3,
+        3
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.1,
+      "max_absolute_supported_boundary_error_frames": 3,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.13338909352355896
+      ],
+      "labels_nonnull": 3,
+      "labels_count": 3
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        80,
+        157
+      ],
+      "reference_boundaries": [
+        86,
+        160
+      ],
+      "signed_errors_frames": [
+        -6,
+        -3
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.15,
+      "max_absolute_supported_boundary_error_frames": 6,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.22829199930940625
+      ],
+      "labels_nonnull": 3,
+      "labels_count": 3
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        83,
+        158
+      ],
+      "notes": [],
+      "label_count": 3,
+      "nonnull_label_count": 3,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        70,
+        134
+      ],
+      "notes": [],
+      "label_count": 3,
+      "nonnull_label_count": 3,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": false
+}

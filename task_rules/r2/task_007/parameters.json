@@ -1,0 +1,364 @@
+{
+  "method": "dtw",
+  "alignment": "effort_and_eef",
+  "why": "没有单一夹爪开度。比较双手关节、末端位置+关节力矩、控制命令三种对齐；双向平均均0.125秒。采用末端位置与力矩联合轨迹，将几何搬运与受力变化作为阶段对应依据，避免由手指姿态猜测夹爪。",
+  "task_id": "task_007",
+  "dataset": "Airbot_MMK2_take_part_both_hands",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "eff_nm|eef_pos"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          79
+        ],
+        "names": [
+          "left_arm_joint_1_rad",
+          "left_arm_joint_2_rad",
+          "left_arm_joint_3_rad",
+          "left_arm_joint_4_rad",
+          "left_arm_joint_5_rad",
+          "left_arm_joint_6_rad",
+          "left_arm_joint_1_vel_rad_s",
+          "left_arm_joint_2_vel_rad_s",
+          "left_arm_joint_3_vel_rad_s",
+          "left_arm_joint_4_vel_rad_s",
+          "left_arm_joint_5_vel_rad_s",
+          "left_arm_joint_6_vel_rad_s",
+          "left_arm_joint_1_eff_nm",
+          "left_arm_joint_2_eff_nm",
+          "left_arm_joint_3_eff_nm",
+          "left_arm_joint_4_eff_nm",
+          "left_arm_joint_5_eff_nm",
+          "left_arm_joint_6_eff_nm",
+          "left_eef_pos_x_m",
+          "left_eef_pos_y_m",
+          "left_eef_pos_z_m",
+          "left_eef_euler_x_rad",
+          "left_eef_euler_y_rad",
+          "left_eef_euler_z_rad",
+          "right_arm_joint_1_rad",
+          "right_arm_joint_2_rad",
+          "right_arm_joint_3_rad",
+          "right_arm_joint_4_rad",
+          "right_arm_joint_5_rad",
+          "right_arm_joint_6_rad",
+          "right_arm_joint_1_vel_rad_s",
+          "right_arm_joint_2_vel_rad_s",
+          "right_arm_joint_3_vel_rad_s",
+          "right_arm_joint_4_vel_rad_s",
+          "right_arm_joint_5_vel_rad_s",
+          "right_arm_joint_6_vel_rad_s",
+          "right_arm_joint_1_eff_nm",
+          "right_arm_joint_2_eff_nm",
+          "right_arm_joint_3_eff_nm",
+          "right_arm_joint_4_eff_nm",
+          "right_arm_joint_5_eff_nm",
+          "right_arm_joint_6_eff_nm",
+          "right_eef_pos_x_m",
+          "right_eef_pos_y_m",
+          "right_eef_pos_z_m",
+          "right_eef_euler_x_rad",
+          "right_eef_euler_y_rad",
+          "right_eef_euler_z_rad",
+          "head_joint_1_rad",
+          "head_joint_2_rad",
+          "head_joint_1_vel_rad_s",
+          "head_joint_2_vel_rad_s",
+          "head_joint_1_eff_nm",
+          "head_joint_2_eff_nm",
+          "spine_joint_1_rad",
+          "left_hand_joint_1_rad",
+          "left_hand_joint_2_rad",
+          "left_hand_joint_3_rad",
+          "left_hand_joint_4_rad",
+          "left_hand_joint_5_rad",
+          "left_hand_joint_6_rad",
+          "left_hand_joint_7_rad",
+          "left_hand_joint_8_rad",
+          "left_hand_joint_9_rad",
+          "left_hand_joint_10_rad",
+          "left_hand_joint_11_rad",
+          "left_hand_joint_12_rad",
+          "right_hand_joint_1_rad",
+          "right_hand_joint_2_rad",
+          "right_hand_joint_3_rad",
+          "right_hand_joint_4_rad",
+          "right_hand_joint_5_rad",
+          "right_hand_joint_6_rad",
+          "right_hand_joint_7_rad",
+          "right_hand_joint_8_rad",
+          "right_hand_joint_9_rad",
+          "right_hand_joint_10_rad",
+          "right_hand_joint_11_rad",
+          "right_hand_joint_12_rad"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          39
+        ],
+        "names": [
+          "left_arm_action_1_rad",
+          "left_arm_action_2_rad",
+          "left_arm_action_3_rad",
+          "left_arm_action_4_rad",
+          "left_arm_action_5_rad",
+          "left_arm_action_6_rad",
+          "right_arm_action_1_rad",
+          "right_arm_action_2_rad",
+          "right_arm_action_3_rad",
+          "right_arm_action_4_rad",
+          "right_arm_action_5_rad",
+          "right_arm_action_6_rad",
+          "head_action_1_rad",
+          "head_action_2_rad",
+          "spine_action_1_rad",
+          "left_hand_action_1_rad",
+          "left_hand_action_2_rad",
+          "left_hand_action_3_rad",
+          "left_hand_action_4_rad",
+          "left_hand_action_5_rad",
+          "left_hand_action_6_rad",
+          "left_hand_action_7_rad",
+          "left_hand_action_8_rad",
+          "left_hand_action_9_rad",
+          "left_hand_action_10_rad",
+          "left_hand_action_11_rad",
+          "left_hand_action_12_rad",
+          "right_hand_action_1_rad",
+          "right_hand_action_2_rad",
+          "right_hand_action_3_rad",
+          "right_hand_action_4_rad",
+          "right_hand_action_5_rad",
+          "right_hand_action_6_rad",
+          "right_hand_action_7_rad",
+          "right_hand_action_8_rad",
+          "right_hand_action_9_rad",
+          "right_hand_action_10_rad",
+          "right_hand_action_11_rad",
+          "right_hand_action_12_rad"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors pick up Aluminum pipe from Building blocks, grasp anchor Main body, grasp method pinch",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "pick",
+        "text": "both_effectors pick up Aluminum pipe from Building blocks, grasp anchor Main body, grasp method pinch",
+        "slots": {
+          "manipulated_object": "Aluminum pipe",
+          "source_anchor": "Building blocks",
+          "grasp_anchor": "Main body",
+          "grasp_method": "pinch"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors place Aluminum pipe on Table and release it",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "place",
+        "text": "both_effectors place Aluminum pipe on Table and release it",
+        "slots": {
+          "manipulated_object": "Aluminum pipe",
+          "placement_relation": "on",
+          "destination_anchor": "Table"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "both_same_skill_same_object",
+      "description": "both_effectors manipulate none at none, causing none to none",
+      "primary_action": {
+        "subject": "both_effectors",
+        "skill": "manipulate",
+        "text": "both_effectors manipulate none at none, causing none to none",
+        "slots": {
+          "interaction_target": "none",
+          "position_anchor": "none",
+          "changed_object": "none",
+          "state_change": "none"
+        }
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 183,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 86,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors pick up Aluminum pipe from Building blocks, grasp anchor Main body, grasp method pinch",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "pick",
+            "text": "both_effectors pick up Aluminum pipe from Building blocks, grasp anchor Main body, grasp method pinch",
+            "slots": {
+              "manipulated_object": "Aluminum pipe",
+              "source_anchor": "Building blocks",
+              "grasp_anchor": "Main body",
+              "grasp_method": "pinch"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 86,
+          "end_frame": 160,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors place Aluminum pipe on Table and release it",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "place",
+            "text": "both_effectors place Aluminum pipe on Table and release it",
+            "slots": {
+              "manipulated_object": "Aluminum pipe",
+              "placement_relation": "on",
+              "destination_anchor": "Table"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 160,
+          "end_frame": 183,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors manipulate none at none, causing none to none",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "manipulate",
+            "text": "both_effectors manipulate none at none, causing none to none",
+            "slots": {
+              "interaction_target": "none",
+              "position_anchor": "none",
+              "changed_object": "none",
+              "state_change": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 158,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 69,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors pick up Aluminum pipe from Building blocks, grasp anchor Main body, grasp method pinch",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "pick",
+            "text": "both_effectors pick up Aluminum pipe from Building blocks, grasp anchor Main body, grasp method pinch",
+            "slots": {
+              "manipulated_object": "Aluminum pipe",
+              "source_anchor": "Building blocks",
+              "grasp_anchor": "Main body",
+              "grasp_method": "pinch"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 69,
+          "end_frame": 133,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors place Aluminum pipe on Table and release it",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "place",
+            "text": "both_effectors place Aluminum pipe on Table and release it",
+            "slots": {
+              "manipulated_object": "Aluminum pipe",
+              "placement_relation": "on",
+              "destination_anchor": "Table"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 133,
+          "end_frame": 158,
+          "state": "normal",
+          "coordination_mode": "both_same_skill_same_object",
+          "description": "both_effectors manipulate none at none, causing none to none",
+          "primary_action": {
+            "subject": "both_effectors",
+            "skill": "manipulate",
+            "text": "both_effectors manipulate none at none, causing none to none",
+            "slots": {
+              "interaction_target": "none",
+              "position_anchor": "none",
+              "changed_object": "none",
+              "state_change": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": false
+}

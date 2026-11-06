@@ -1,0 +1,87 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        147,
+        371,
+        669
+      ],
+      "reference_boundaries": [
+        149,
+        372,
+        669
+      ],
+      "signed_errors_frames": [
+        -2,
+        -1,
+        0
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.03333333333333333,
+      "max_absolute_supported_boundary_error_frames": 2,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [],
+      "labels_nonnull": 4,
+      "labels_count": 4
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        174,
+        374,
+        819
+      ],
+      "reference_boundaries": [
+        177,
+        374,
+        815
+      ],
+      "signed_errors_frames": [
+        -3,
+        0,
+        4
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.07777777777777778,
+      "max_absolute_supported_boundary_error_frames": 4,
+      "notes": [
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [],
+      "labels_nonnull": 4,
+      "labels_count": 4
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        174,
+        374,
+        819
+      ],
+      "notes": [],
+      "label_count": 4,
+      "nonnull_label_count": 3,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        147,
+        371,
+        669
+      ],
+      "notes": [],
+      "label_count": 4,
+      "nonnull_label_count": 3,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": false
+}

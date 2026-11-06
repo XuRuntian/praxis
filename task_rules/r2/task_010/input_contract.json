@@ -1,0 +1,71 @@
+{
+  "fps": 30,
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": [
+        "follower_arm_joint_1.pos",
+        "follower_arm_joint_2.pos",
+        "follower_arm_joint_3.pos",
+        "follower_arm_joint_4.pos",
+        "follower_arm_joint_5.pos",
+        "follower_arm_joint_6.pos",
+        "follower_arm_joint_7.pos",
+        "follower_arm_gripper.pos",
+        "follower_arm_pose_x.pos",
+        "follower_arm_pose_y.pos",
+        "follower_arm_pose_z.pos",
+        "follower_arm_pose_rx.pos",
+        "follower_arm_pose_ry.pos",
+        "follower_arm_pose_rz.pos"
+      ]
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": [
+        "follower_arm_joint_1.pos",
+        "follower_arm_joint_2.pos",
+        "follower_arm_joint_3.pos",
+        "follower_arm_joint_4.pos",
+        "follower_arm_joint_5.pos",
+        "follower_arm_joint_6.pos",
+        "follower_arm_joint_7.pos",
+        "follower_arm_gripper.pos",
+        "follower_arm_pose_x.pos",
+        "follower_arm_pose_y.pos",
+        "follower_arm_pose_z.pos",
+        "follower_arm_pose_rx.pos",
+        "follower_arm_pose_ry.pos",
+        "follower_arm_pose_rz.pos"
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    }
+  },
+  "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+}

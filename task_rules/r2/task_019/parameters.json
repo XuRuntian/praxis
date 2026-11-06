@@ -1,0 +1,645 @@
+{
+  "method": "hybrid_card",
+  "fraction": 0.95,
+  "alignment": "arms_grips",
+  "why": "四个抓放边界用两侧夹爪完成阈值；短暂返回与下一侧动作重叠，全部关节对齐会偏23–27帧。单独研究左右臂：右臂轨迹更能定位主体切换（10–19帧），转移结束用联合轨迹（2帧）。混合而不将全部边界强行当作夹爪事件。",
+  "task_id": "task_019",
+  "dataset": "Galbot_G1_Service_Front desk_Front Desk Service_1054",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "arm_joint|gripper"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          23
+        ],
+        "names": [
+          "right_arm_joint_1",
+          "right_arm_joint_2",
+          "right_arm_joint_3",
+          "right_arm_joint_4",
+          "right_arm_joint_5",
+          "right_arm_joint_6",
+          "right_arm_joint_7",
+          "left_arm_joint_1",
+          "left_arm_joint_2",
+          "left_arm_joint_3",
+          "left_arm_joint_4",
+          "left_arm_joint_5",
+          "left_arm_joint_6",
+          "left_arm_joint_7",
+          "right_gripper_joint_1",
+          "left_gripper_joint_1",
+          "leg_joint_1",
+          "leg_joint_2",
+          "leg_joint_3",
+          "leg_joint_4",
+          "leg_joint_5",
+          "head_joint_1",
+          "head_joint_2"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          23
+        ],
+        "names": [
+          "right_arm_joint_1",
+          "right_arm_joint_2",
+          "right_arm_joint_3",
+          "right_arm_joint_4",
+          "right_arm_joint_5",
+          "right_arm_joint_6",
+          "right_arm_joint_7",
+          "left_arm_joint_1",
+          "left_arm_joint_2",
+          "left_arm_joint_3",
+          "left_arm_joint_4",
+          "left_arm_joint_5",
+          "left_arm_joint_6",
+          "left_arm_joint_7",
+          "right_gripper_joint_1",
+          "left_gripper_joint_1",
+          "leg_joint_1",
+          "leg_joint_2",
+          "leg_joint_3",
+          "leg_joint_4",
+          "leg_joint_5",
+          "head_joint_1",
+          "head_joint_2"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector pick up card from person, grasp anchor main_body, grasp method pinch",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "pick",
+        "text": "left_effector pick up card from person, grasp anchor main_body, grasp method pinch",
+        "slots": {
+          "grasp_anchor": "main_body",
+          "grasp_method": "pinch",
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "card"
+          },
+          "source_anchor": {
+            "color": "",
+            "material": "",
+            "name": "person"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector transfer card from center to card reader",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "transfer",
+        "text": "left_effector transfer card from center to card reader",
+        "slots": {
+          "destination_anchor": {
+            "color": "",
+            "material": "",
+            "name": "card reader"
+          },
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "card"
+          },
+          "source_anchor": "center"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "handover_or_regrasp",
+      "description": "left_effector hand over card to person",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "hand_over",
+        "text": "left_effector hand over card to person",
+        "slots": {
+          "destination_anchor": {
+            "color": "",
+            "material": "",
+            "name": "person"
+          },
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "card"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "left_effector return to initial pose",
+      "primary_action": {
+        "subject": "left_effector",
+        "skill": "return_to_initial_pose",
+        "text": "left_effector return to initial pose",
+        "slots": {}
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector pick up card from card rack, grasp anchor corner, grasp method pinch",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "pick",
+        "text": "right_effector pick up card from card rack, grasp anchor corner, grasp method pinch",
+        "slots": {
+          "grasp_anchor": "corner",
+          "grasp_method": "pinch",
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "card"
+          },
+          "source_anchor": {
+            "color": "",
+            "material": "",
+            "name": "card rack"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "handover_or_regrasp",
+      "description": "right_effector hand over card to person",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "hand_over",
+        "text": "right_effector hand over card to person",
+        "slots": {
+          "destination_anchor": {
+            "color": "",
+            "material": "",
+            "name": "person"
+          },
+          "manipulated_object": {
+            "color": "",
+            "material": "",
+            "name": "card"
+          }
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "right_effector return to initial pose",
+      "primary_action": {
+        "subject": "right_effector",
+        "skill": "return_to_initial_pose",
+        "text": "right_effector return to initial pose",
+        "slots": {}
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 999,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 116,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up card from person, grasp anchor main_body, grasp method pinch",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up card from person, grasp anchor main_body, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "main_body",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              },
+              "source_anchor": {
+                "color": "",
+                "material": "",
+                "name": "person"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 116,
+          "end_frame": 220,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector transfer card from center to card reader",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "transfer",
+            "text": "left_effector transfer card from center to card reader",
+            "slots": {
+              "destination_anchor": {
+                "color": "",
+                "material": "",
+                "name": "card reader"
+              },
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              },
+              "source_anchor": "center"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 220,
+          "end_frame": 373,
+          "state": "normal",
+          "coordination_mode": "handover_or_regrasp",
+          "description": "left_effector hand over card to person",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "hand_over",
+            "text": "left_effector hand over card to person",
+            "slots": {
+              "destination_anchor": {
+                "color": "",
+                "material": "",
+                "name": "person"
+              },
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              }
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 373,
+          "end_frame": 395,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector return to initial pose",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "return_to_initial_pose",
+            "text": "left_effector return to initial pose",
+            "slots": {}
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 395,
+          "end_frame": 697,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up card from card rack, grasp anchor corner, grasp method pinch",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up card from card rack, grasp anchor corner, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "corner",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              },
+              "source_anchor": {
+                "color": "",
+                "material": "",
+                "name": "card rack"
+              }
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 697,
+          "end_frame": 891,
+          "state": "normal",
+          "coordination_mode": "handover_or_regrasp",
+          "description": "right_effector hand over card to person",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "hand_over",
+            "text": "right_effector hand over card to person",
+            "slots": {
+              "destination_anchor": {
+                "color": "",
+                "material": "",
+                "name": "person"
+              },
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              }
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 891,
+          "end_frame": 999,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector return to initial pose",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "return_to_initial_pose",
+            "text": "right_effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 876,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 124,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector pick up card from person, grasp anchor main_body, grasp method pinch",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "pick",
+            "text": "left_effector pick up card from person, grasp anchor main_body, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "main_body",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              },
+              "source_anchor": {
+                "color": "",
+                "material": "",
+                "name": "person"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 124,
+          "end_frame": 208,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector transfer card from center to card reader",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "transfer",
+            "text": "left_effector transfer card from center to card reader",
+            "slots": {
+              "destination_anchor": {
+                "color": "",
+                "material": "",
+                "name": "card reader"
+              },
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              },
+              "source_anchor": "center"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 208,
+          "end_frame": 361,
+          "state": "normal",
+          "coordination_mode": "handover_or_regrasp",
+          "description": "left_effector hand over card to person",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "hand_over",
+            "text": "left_effector hand over card to person",
+            "slots": {
+              "destination_anchor": {
+                "color": "",
+                "material": "",
+                "name": "person"
+              },
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              }
+            }
+          }
+        },
+        {
+          "id": 3,
+          "start_frame": 361,
+          "end_frame": 396,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "left_effector return to initial pose",
+          "primary_action": {
+            "subject": "left_effector",
+            "skill": "return_to_initial_pose",
+            "text": "left_effector return to initial pose",
+            "slots": {}
+          }
+        },
+        {
+          "id": 4,
+          "start_frame": 396,
+          "end_frame": 575,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector pick up card from card rack, grasp anchor corner, grasp method pinch",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "pick",
+            "text": "right_effector pick up card from card rack, grasp anchor corner, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "corner",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              },
+              "source_anchor": {
+                "color": "",
+                "material": "",
+                "name": "card rack"
+              }
+            }
+          }
+        },
+        {
+          "id": 5,
+          "start_frame": 575,
+          "end_frame": 771,
+          "state": "normal",
+          "coordination_mode": "handover_or_regrasp",
+          "description": "right_effector hand over card to person",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "hand_over",
+            "text": "right_effector hand over card to person",
+            "slots": {
+              "destination_anchor": {
+                "color": "",
+                "material": "",
+                "name": "person"
+              },
+              "manipulated_object": {
+                "color": "",
+                "material": "",
+                "name": "card"
+              }
+            }
+          }
+        },
+        {
+          "id": 6,
+          "start_frame": 771,
+          "end_frame": 876,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "right_effector return to initial pose",
+          "primary_action": {
+            "subject": "right_effector",
+            "skill": "return_to_initial_pose",
+            "text": "right_effector return to initial pose",
+            "slots": {}
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "boundary_index": 0,
+      "index": 15,
+      "column": "observation.state",
+      "direction": -1,
+      "threshold": 0.050000000000000044,
+      "levels": [
+        0.0,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 2,
+      "index": 15,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 0.95,
+      "levels": [
+        0.0,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 4,
+      "index": 14,
+      "column": "observation.state",
+      "direction": -1,
+      "threshold": 0.050000000000000044,
+      "levels": [
+        0.0,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    },
+    {
+      "boundary_index": 5,
+      "index": 14,
+      "column": "observation.state",
+      "direction": 1,
+      "threshold": 0.95,
+      "levels": [
+        0.0,
+        1.0
+      ],
+      "completion_fraction": 0.95,
+      "hold": 3,
+      "occurrence": "first"
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": true
+}

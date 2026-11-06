@@ -1,0 +1,340 @@
+{
+  "method": "dtw",
+  "alignment": "pose_grip",
+  "why": "两范例末段持续时间差异很大，关节对齐产生210帧误差；末端位置+夹爪对齐将末段边界误差降至1帧。第一边界仍17–21帧，说明按压完成附近定义有不确定性；不使用时长比例。",
+  "task_id": "task_012",
+  "dataset": "Franka_lamp_button_2546",
+  "alignment_config": {
+    "selectors": [
+      [
+        "observation.state",
+        "pose_[xyz]\\.pos|gripper"
+      ]
+    ],
+    "smooth_seconds": 0.08,
+    "stride": 2,
+    "warp_penalty": 0.02
+  },
+  "channels": {
+    "fps": 30,
+    "features": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_arm_joint_1.pos",
+          "follower_arm_joint_2.pos",
+          "follower_arm_joint_3.pos",
+          "follower_arm_joint_4.pos",
+          "follower_arm_joint_5.pos",
+          "follower_arm_joint_6.pos",
+          "follower_arm_joint_7.pos",
+          "follower_arm_gripper.pos",
+          "follower_arm_pose_x.pos",
+          "follower_arm_pose_y.pos",
+          "follower_arm_pose_z.pos",
+          "follower_arm_pose_rx.pos",
+          "follower_arm_pose_ry.pos",
+          "follower_arm_pose_rz.pos"
+        ]
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          14
+        ],
+        "names": [
+          "follower_arm_joint_1.pos",
+          "follower_arm_joint_2.pos",
+          "follower_arm_joint_3.pos",
+          "follower_arm_joint_4.pos",
+          "follower_arm_joint_5.pos",
+          "follower_arm_joint_6.pos",
+          "follower_arm_joint_7.pos",
+          "follower_arm_gripper.pos",
+          "follower_arm_pose_x.pos",
+          "follower_arm_pose_y.pos",
+          "follower_arm_pose_z.pos",
+          "follower_arm_pose_rx.pos",
+          "follower_arm_pose_ry.pos",
+          "follower_arm_pose_rz.pos"
+        ]
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null
+      }
+    },
+    "note": "Names and units are source metadata; unspecified coordinate frames remain unknown. action is commanded data, observation.state is recorded state; sensor/vision-derived provenance must be checked before claiming sensor-only input."
+  },
+  "seed": 0,
+  "labels": [
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector press top of white switch at main_body and affect white switch",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "press",
+        "text": "effector press top of white switch at main_body and affect white switch",
+        "slots": {
+          "changed_object": {
+            "name": "switch",
+            "color": "white",
+            "material": ""
+          },
+          "interaction_target": {
+            "name": "switch",
+            "color": "white",
+            "material": ""
+          },
+          "position_anchor": "main_body",
+          "press_anchor": "top"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector pick up black rope from far, grasp anchor tail, grasp method pinch",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "pick",
+        "text": "effector pick up black rope from far, grasp anchor tail, grasp method pinch",
+        "slots": {
+          "grasp_anchor": "tail",
+          "grasp_method": "pinch",
+          "manipulated_object": {
+            "name": "rope",
+            "color": "black",
+            "material": ""
+          },
+          "source_anchor": "far"
+        }
+      }
+    },
+    {
+      "state": "normal",
+      "coordination_mode": "single_hand",
+      "description": "effector pull black rope at tail from up to/toward down and affect black rope",
+      "primary_action": {
+        "subject": "effector",
+        "skill": "pull",
+        "text": "effector pull black rope at tail from up to/toward down and affect black rope",
+        "slots": {
+          "changed_object": {
+            "name": "rope",
+            "color": "black",
+            "material": ""
+          },
+          "destination_anchor": "down",
+          "interaction_target": {
+            "name": "rope",
+            "color": "black",
+            "material": ""
+          },
+          "pull_anchor": "tail",
+          "source_anchor": "up"
+        }
+      }
+    }
+  ],
+  "semantic_conflict_stages": [],
+  "semantic_mode": "structured_exemplar_copy_via_physical_phase_correspondence",
+  "semantic_assumption": "same task and action order; not direct recognition of identity/color/material",
+  "source_annotations": [
+    {
+      "episode_id": 0,
+      "frame_count": 1077,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 311,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector press top of white switch at main_body and affect white switch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "press",
+            "text": "effector press top of white switch at main_body and affect white switch",
+            "slots": {
+              "changed_object": {
+                "name": "switch",
+                "color": "white",
+                "material": ""
+              },
+              "interaction_target": {
+                "name": "switch",
+                "color": "white",
+                "material": ""
+              },
+              "position_anchor": "main_body",
+              "press_anchor": "top"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 311,
+          "end_frame": 815,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pick up black rope from far, grasp anchor tail, grasp method pinch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pick",
+            "text": "effector pick up black rope from far, grasp anchor tail, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "tail",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "name": "rope",
+                "color": "black",
+                "material": ""
+              },
+              "source_anchor": "far"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 815,
+          "end_frame": 1077,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pull black rope at tail from up to/toward down and affect black rope",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pull",
+            "text": "effector pull black rope at tail from up to/toward down and affect black rope",
+            "slots": {
+              "changed_object": {
+                "name": "rope",
+                "color": "black",
+                "material": ""
+              },
+              "destination_anchor": "down",
+              "interaction_target": {
+                "name": "rope",
+                "color": "black",
+                "material": ""
+              },
+              "pull_anchor": "tail",
+              "source_anchor": "up"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": 1,
+      "frame_count": 771,
+      "annotation_source": "human",
+      "subtasks": [
+        {
+          "id": 0,
+          "start_frame": 0,
+          "end_frame": 314,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector press top of white switch at main_body and affect white switch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "press",
+            "text": "effector press top of white switch at main_body and affect white switch",
+            "slots": {
+              "changed_object": {
+                "name": "switch",
+                "color": "white",
+                "material": ""
+              },
+              "interaction_target": {
+                "name": "switch",
+                "color": "white",
+                "material": ""
+              },
+              "position_anchor": "main_body",
+              "press_anchor": "top"
+            }
+          }
+        },
+        {
+          "id": 1,
+          "start_frame": 314,
+          "end_frame": 719,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pick up black rope from far, grasp anchor tail, grasp method pinch",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pick",
+            "text": "effector pick up black rope from far, grasp anchor tail, grasp method pinch",
+            "slots": {
+              "grasp_anchor": "tail",
+              "grasp_method": "pinch",
+              "manipulated_object": {
+                "name": "rope",
+                "color": "black",
+                "material": ""
+              },
+              "source_anchor": "far"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "start_frame": 719,
+          "end_frame": 771,
+          "state": "normal",
+          "coordination_mode": "single_hand",
+          "description": "effector pull black rope at tail from up to/toward down and affect black rope",
+          "primary_action": {
+            "subject": "effector",
+            "skill": "pull",
+            "text": "effector pull black rope at tail from up to/toward down and affect black rope",
+            "slots": {
+              "changed_object": {
+                "name": "rope",
+                "color": "black",
+                "material": ""
+              },
+              "destination_anchor": "down",
+              "interaction_target": {
+                "name": "rope",
+                "color": "black",
+                "material": ""
+              },
+              "pull_anchor": "tail",
+              "source_anchor": "up"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required_columns": [
+    "observation.state"
+  ],
+  "unresolved": true
+}

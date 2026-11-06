@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "scope": "user_approved_prepared_20_tasks",
+  "tasks": [
+    {
+      "dataset": "Agilex_Split_Aloha_Place_Banana_Put the bananas into the basket_959",
+      "task_id": "task_004",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Agilex_Split_Aloha_Prepare_Fruit salad_Banana_977_left",
+      "task_id": "task_005",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Agilex_Split_Aloha_Prepare_Fruit salad_Banana_977_right",
+      "task_id": "task_006",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Airbot_MMK2_take_part_both_hands",
+      "task_id": "task_007",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "dataset": "Franka_click_bell_twice_clean2_2553",
+      "task_id": "task_008",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2
+      ]
+    },
+    {
+      "dataset": "Franka_click_bell_twice_clean3_2562",
+      "task_id": "task_009",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "dataset": "Franka_click_bell_twice_clean_2551",
+      "task_id": "task_010",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2
+      ]
+    },
+    {
+      "dataset": "Franka_lamp_button2_2563",
+      "task_id": "task_011",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2
+      ]
+    },
+    {
+      "dataset": "Franka_lamp_button_2546",
+      "task_id": "task_012",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2
+      ]
+    },
+    {
+      "dataset": "Franka_pot_bread_2_2560",
+      "task_id": "task_013",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2
+      ]
+    },
+    {
+      "dataset": "Galaxea_R1_Lite_stamp",
+      "task_id": "task_014",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "dataset": "Galbot_G1_Insert_Test tube_Insert the test tube_1022_left",
+      "task_id": "task_016",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Galbot_G1_Insert_Test tube_Insert the test tube_1022_right",
+      "task_id": "task_017",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Galbot_G1_Pull_the_curtains",
+      "task_id": "task_018",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Galbot_G1_Service_Front desk_Front Desk Service_1054",
+      "task_id": "task_019",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "dataset": "Galbot_G1_scrub_toilet_bowl",
+      "task_id": "task_021",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "dataset": "build_with_block",
+      "task_id": "task_023",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "dataset": "folding_towels",
+      "task_id": "task_024",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "dataset": "做三明治_Make_sandwichesCopyCopyCopy",
+      "task_id": "task_027",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "dataset": "拆快递_Unpacking_the_express_delivery",
+      "task_id": "task_028",
+      "exemplar_ids": [
+        0,
+        1
+      ],
+      "target_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    }
+  ],
+  "source_report_sha256": "a31605dff1fb211b2d6fffa4f96ff64632a8a1b42238ac95b45bd7a15c83d4c6"
+}

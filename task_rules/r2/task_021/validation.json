@@ -1,0 +1,129 @@
+{
+  "cross_application": [
+    {
+      "train_episode": 0,
+      "validate_episode": 1,
+      "predicted_boundaries": [
+        355,
+        510,
+        1320,
+        2344,
+        2594,
+        3335,
+        4187
+      ],
+      "reference_boundaries": [
+        310,
+        525,
+        1269,
+        2354,
+        2595,
+        3266,
+        4194
+      ],
+      "signed_errors_frames": [
+        45,
+        -15,
+        51,
+        -10,
+        -1,
+        69,
+        -7
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.9428571428571428,
+      "max_absolute_supported_boundary_error_frames": 69,
+      "notes": [
+        "pickup_and_arm_handoff_boundaries_not_precisely_identifiable",
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.02781963732516392
+      ],
+      "labels_nonnull": 8,
+      "labels_count": 8
+    },
+    {
+      "train_episode": 1,
+      "validate_episode": 0,
+      "predicted_boundaries": [
+        278,
+        585,
+        1753,
+        2768,
+        3042,
+        4077,
+        4808
+      ],
+      "reference_boundaries": [
+        315,
+        573,
+        1803,
+        2738,
+        3039,
+        4140,
+        4799
+      ],
+      "signed_errors_frames": [
+        -37,
+        12,
+        -50,
+        30,
+        3,
+        -63,
+        9
+      ],
+      "mean_absolute_supported_boundary_error_seconds": 0.9714285714285714,
+      "max_absolute_supported_boundary_error_frames": 63,
+      "notes": [
+        "pickup_and_arm_handoff_boundaries_not_precisely_identifiable",
+        "Method choice used both exemplars; this cross-application is not independent/nested validation."
+      ],
+      "alignment_costs": [
+        0.018466875833097997
+      ],
+      "labels_nonnull": 8,
+      "labels_count": 8
+    }
+  ],
+  "two_exemplar_in_sample": [
+    {
+      "episode_id": 0,
+      "predicted_boundaries": [
+        296,
+        581,
+        1778,
+        2753,
+        3041,
+        4108,
+        4804
+      ],
+      "notes": [
+        "pickup_and_arm_handoff_boundaries_not_precisely_identifiable"
+      ],
+      "label_count": 8,
+      "nonnull_label_count": 7,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    },
+    {
+      "episode_id": 1,
+      "predicted_boundaries": [
+        332,
+        518,
+        1294,
+        2349,
+        2594,
+        3300,
+        4190
+      ],
+      "notes": [
+        "pickup_and_arm_handoff_boundaries_not_precisely_identifiable"
+      ],
+      "label_count": 8,
+      "nonnull_label_count": 7,
+      "kind": "two_exemplar_in_sample_self_alignment_can_be_optimistic"
+    }
+  ],
+  "independent_test": false,
+  "method_selected_using_both_exemplars": true,
+  "unresolved": true
+}
