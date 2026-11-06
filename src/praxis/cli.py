@@ -6,9 +6,10 @@ from .io import write_json
 def main():
     parser = argparse.ArgumentParser(prog='praxis')
     commands = parser.add_subparsers(dest='command', required=True)
-    run = commands.add_parser('run', help='Execute R2 task rules on current physical data')
-    for name in ('data-root', 'split', 'rules-root', 'output'):
+    run = commands.add_parser('run', help='Execute task methods on current physical data')
+    for name in ('data-root', 'rules-root', 'output'):
         run.add_argument('--'+name, required=True)
+    run.add_argument('--tasks', '--split', dest='split', required=True, help='Task/episode list; --split retained for compatibility')
     score = commands.add_parser('score', help='Independent scoring; reads ground truth')
     score.add_argument('--run', required=True)
     score.add_argument('--data-root', required=True)

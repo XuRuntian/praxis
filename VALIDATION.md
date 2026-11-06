@@ -16,3 +16,9 @@
 本机结果位于被 Git 忽略的 `outputs/r2_replay/`、`outputs/r2_comparison.json` 和 `outputs/r2_score.json`。原实验文件未修改。原有 106 条输入失败保持原样，后续修复应另建运行，不能覆盖此次迁移基准。
 
 验收命令见 README；使用本机 `.venv/bin/praxis` 执行。完整运行环境版本和代码哈希记录于 `outputs/r2_replay/freeze.json`。依赖快照见 requirements-replay.txt。
+
+## 方法目录加载验收
+
+新增按任务目录加载 rule.py 的入口后，以相同数据重放 20 个任务。`outputs/method_loading_comparison.json` 核对 344/344 条完全一致，`outputs/method_loading_score.json` 得到同样的 1043/879 匹配数和 F1 分数。未改变 R2 数值算法或修复旧输入失败。
+
+23 项测试通过，覆盖无 GT/无范例数量声明的新任务执行、一次加载模板、拒绝输出、空切分点的单阶段含义、非法边界、资源变更检测、重复运行保护及代码重新加载。新方法不需修改核心执行器；未引入自动 Agent 调度或视觉支持。
